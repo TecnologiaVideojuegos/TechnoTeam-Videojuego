@@ -31,7 +31,6 @@ public class Hero {
     public Hero() throws SlickException {
 
         heroName = "Hero";
-        System.out.println("model.Hero.<init>()");
         heroLevel = 1;
         tempHeroExperience = 0;
         maxHeroExperience = 100;
