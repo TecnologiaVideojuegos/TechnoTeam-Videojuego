@@ -6,3 +6,11 @@ Para importar los proyectos lo que yo hago que me funciona es crear un
 proyecto nuevo con el mismo nombre que el que quiero importar y una vez
 creado le meto los contenidos del proyecto a importar para que me cree
 el classpath.
+
+## Pasar de eclipse a netbeans
+
+https://netbeans.org/kb/74/java/import-eclipse_es.html
+
+https://www.youtube.com/watch?v=j0Y16CDLPeQ
+
+
