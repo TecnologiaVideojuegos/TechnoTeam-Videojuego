@@ -7,7 +7,6 @@ import org.newdawn.slick.SlickException;
 
 public class Sprite {
 
-
     public Image imgSprite;
     public int heroHeight, heroWidth;
 

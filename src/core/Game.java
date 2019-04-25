@@ -5,7 +5,6 @@
  */
 package core;
 
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.newdawn.slick.AppGameContainer;
@@ -25,10 +24,10 @@ import states.PlayState;
 public class Game extends StateBasedGame {
 
     public static final String GAMENAME = "Tyrfing";
-    
+
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;
-    
+
     public static final int MENU = 0;
     public static final int OPTIONS = 2;
 
@@ -52,10 +51,10 @@ public class Game extends StateBasedGame {
             app.setDisplayMode(WIDTH, HEIGHT, false);
             app.setTargetFrameRate(100);
             app.setShowFPS(false);
-            
+
             app.start();
         } catch (SlickException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+        }
     }
 }

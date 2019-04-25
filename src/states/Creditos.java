@@ -11,15 +11,14 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Creditos extends BasicGameState{
+public class Creditos extends BasicGameState {
 
     Image fondo;
     Image back;
-    String pos_mouse="";
+    String pos_mouse = "";
 
     Color colorTexto = Color.white;
     Color colorOpcionSelecionada[] = {colorTexto};
-   
 
     public Creditos() {
     }
@@ -44,7 +43,7 @@ public class Creditos extends BasicGameState{
 
         int pos_x = Mouse.getX();
         int pos_y = Mouse.getY();
-        
+
         pos_mouse = "x = " + pos_x + " y =" + pos_y;
         colorTexto = Color.white;
         for (int j = 0; j < colorOpcionSelecionada.length; j++) {
@@ -88,7 +87,7 @@ public class Creditos extends BasicGameState{
         Fonts.print18().drawString(350, 545, "'Nunca hay que subestimar el poder de la imaginación'", Color.white);
 
         Fonts.print25().drawString(580, 625, "VOLVER", colorOpcionSelecionada[0]);
-        
+
         g.drawString(pos_mouse, 10, 10);
     }
 }

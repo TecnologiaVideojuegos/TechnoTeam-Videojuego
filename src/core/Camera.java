@@ -37,14 +37,13 @@ public class Camera {
 
         mapHeight = this.numTilesX * this.tileWidth;
         mapWidth = this.numTilesY * this.tileHeight;
-        
 
         this.gc = gc;
     }
 
     public void centerOn(float x, float y) {
         cameraX = x - gc.getWidth() / 2;
-        cameraY = y - (gc.getHeight() / 2) ;
+        cameraY = y - (gc.getHeight() / 2);
 
         if (cameraX < 0) {
             cameraX = 0;
@@ -57,9 +56,9 @@ public class Camera {
             cameraY = 0;
         }
         if (cameraY + Game.HEIGHT > (mapHeight + 120)) {
-            cameraY = (mapHeight + 120) - gc.getHeight() ;
+            cameraY = (mapHeight + 120) - gc.getHeight();
         }
-        
+
         if (mapWidth < core.Game.WIDTH) {
             cameraX = ((mapWidth / 2) - (core.Game.WIDTH / 2));
         }
@@ -81,22 +80,14 @@ public class Camera {
     }
 
     public void drawMap(int offsetX, int offsetY, int layer) {
-        //calculate the offset to the next tile (needed by TiledMap.render())
+
         int tileOffsetX = (int) -(cameraX % tileWidth);
         int tileOffsetY = (int) -(cameraY % tileHeight);
 
-        //calculate the index of the leftmost tile that is being displayed
         int tileIndexX = (int) (cameraX / tileWidth);
         int tileIndexY = (int) (cameraY / tileHeight);
 
-        //finally draw the section of the MAP on the screen
-        map.render(
-                tileOffsetX + offsetX,
-                tileOffsetY + offsetY,
-                tileIndexX,
-                tileIndexY,
-                (gc.getWidth() - tileOffsetX) / tileWidth + 1,
-                (gc.getHeight() - tileOffsetY) / tileHeight + 1, layer, false);
+        map.render(tileOffsetX + offsetX, tileOffsetY + offsetY, tileIndexX, tileIndexY, (gc.getWidth() - tileOffsetX) / tileWidth + 1, (gc.getHeight() - tileOffsetY) / tileHeight + 1, layer, false);
     }
 
     public void translateGraphics() {

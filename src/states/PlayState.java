@@ -21,7 +21,6 @@ public class PlayState extends BasicGameState {
 
     private Event event;
 
-
     public PlayState() {
     }
 

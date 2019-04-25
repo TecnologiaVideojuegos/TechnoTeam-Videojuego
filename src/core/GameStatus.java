@@ -1,12 +1,10 @@
 package core;
 
-import java.util.HashMap;
 import model.Hero;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class GameStatus extends core.LoadEntity {
-
 
     public static boolean musicOn;
 
@@ -18,7 +16,6 @@ public class GameStatus extends core.LoadEntity {
     public static int spriteNumber;
     public static Sprite sprite;
     public static Hero hero;
-
 
     LoadEntity loadEntity;
 
@@ -41,4 +38,3 @@ public class GameStatus extends core.LoadEntity {
         updateEntityFieldList(map);
     }
 }
-

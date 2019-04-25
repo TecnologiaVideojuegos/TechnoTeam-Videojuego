@@ -17,7 +17,7 @@ public class LoadEntity {
     public static Rectangle recPlayer, recField;
 
     public void updateEntityFieldList(TiledMap map) {
-        System.out.println(map.getWidth()+" "+map.getHeight());
+        System.out.println(map.getWidth() + " " + map.getHeight());
         for (int i = 3; i < 4; i++) {
             exist = new boolean[map.getWidth()][map.getHeight()];
             testField = map.getTileId(0, 0, i);
@@ -61,7 +61,7 @@ public class LoadEntity {
             }
         }
     }
-    
+
     public void updateMobsFields(TiledMap map) {
         mobs = new ArrayList<>();
         for (int i = 0; i < map.getWidth(); i++) {
