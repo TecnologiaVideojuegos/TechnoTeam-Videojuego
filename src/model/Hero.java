@@ -55,24 +55,6 @@ public class Hero {
         levelPoints = 10;
     }
 
-    /**
-     *
-     * @param heroName
-     * @param heroLevel
-     * @param tempHeroExperience
-     * @param maxHeroExperience
-     * @param tempHeroHealth
-     * @param maxHeroHealth
-     * @param tempHeroMana
-     * @param maxHeroMana
-     * @param heroAttack
-     * @param heroDeffence
-     * @param strenght
-     * @param agility
-     * @param inteligence
-     * @param levelPoints
-     */
-
     public Hero(String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana,double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
         this.heroName = heroName;
         this.heroLevel = heroLevel;

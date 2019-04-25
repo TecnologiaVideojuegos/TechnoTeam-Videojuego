@@ -1,6 +1,7 @@
 package states;
 
 import core.GameStatus;
+import core.Sprite;
 import utils.Fonts;
 import model.Hero;
 import org.lwjgl.input.Mouse;
@@ -19,7 +20,7 @@ public class CrearProtagonista extends BasicGameState {
     Image fondoCrearProtagonista;
     String mouse;
 
-    private static String avatarName = "";
+    private static String avatarName="";
 
     Image[] avatar = new Image[3];
 
@@ -31,13 +32,8 @@ public class CrearProtagonista extends BasicGameState {
     Color colorTexto = Color.white;
     Color opcionSeleccionada = Color.orange;
 
-    //Kolory tekstu na przyciskach
     Color ctab[] = {colorTexto, colorTexto, colorTexto};
 
-    private static int copyOfLevelPoints;
-    private static int copyOfStrength;
-    private static int copyOfAgility;
-    private static int copyOfInteligence;
 
     public CrearProtagonista() {
     }
@@ -53,15 +49,11 @@ public class CrearProtagonista extends BasicGameState {
         fondoCrearProtagonista = new Image("graphic/menu/CreateNewHeroBg.png");
         mouse = "";
 
-        avatar[0] = new Image("graphic/heroSprite/avatar1.png").getSubImage(0, 0, 32, 64);
-        //avatar[1] = new Image("graphic/heroSprite/avatar2.png").getSubImage(0, 0, 32, 64);
-        //avatar[2] = new Image("graphic/heroSprite/avatar3.png").getSubImage(0, 0, 32, 64);
+        avatar[0] = new Image("graphic/heroSprite/avatar1.png").getSubImage(0, 0, 55, 64);
+        avatar[1] = new Image("graphic/heroSprite/avatar2.png").getSubImage(0, 0, 55, 64);
+        
 
         GameStatus.hero = new Hero();
-        copyOfLevelPoints = GameStatus.hero.levelPoints;
-        copyOfStrength = GameStatus.hero.fuerza;
-        copyOfAgility = GameStatus.hero.resistencia;
-        copyOfInteligence = GameStatus.hero.magia;
          
         actualImage = 0;
     }
@@ -138,70 +130,58 @@ public class CrearProtagonista extends BasicGameState {
         }
 
         //str - BUTTON
-        if (copyOfStrength > 0) {
-            if ((xpos > 611 && xpos < 631) && (ypos > 434 && ypos < 454)) {
+        if (GameStatus.hero.fuerza > 1) {
+            if ((xpos > 610 && xpos < 640) && (ypos > 425 && ypos < 455)) {
                 if (input.isMousePressed(0)) {
                     GameStatus.hero.fuerza--;
                     GameStatus.hero.levelPoints++;
-                    copyOfStrength--;
-                    copyOfLevelPoints++;
                 }
             }
         }
         //agi - BUTTON
-        if (copyOfAgility > 0) {
-            if ((xpos > 611 && xpos < 631) && (ypos > 382 && ypos < 405)) {
+        if (GameStatus.hero.resistencia > 1) {
+            if ((xpos > 610 && xpos < 640) && (ypos > 375 && ypos < 405)) {
                 if (input.isMousePressed(0)) {
                     //zręczność -
                     GameStatus.hero.resistencia--;
                     GameStatus.hero.levelPoints++;
-                    copyOfAgility--;
-                    copyOfLevelPoints++;
                 }
             }
         }
         //int - BUTTON
-        if (copyOfInteligence > 0) {
-            if ((xpos > 611 && xpos < 631) && (ypos > 332 && ypos < 355)) {
+        if (GameStatus.hero.magia > 1) {
+            if ((xpos > 610 && xpos < 640) && (ypos > 325 && ypos < 355)) {
                 if (input.isMousePressed(0)) {
                     //obrona -
                     GameStatus.hero.magia--;
                     GameStatus.hero.levelPoints++;
-                    copyOfInteligence--;
-                    copyOfLevelPoints++;
                 }
             }
         }
 
-        if (copyOfLevelPoints > 0) {
+        if (GameStatus.hero.levelPoints > 0) {
             //str + BUTTON
-            if ((xpos > 650 && xpos < 669) && (ypos > 434 && ypos < 454)) {
+            if ((xpos > 650 && xpos < 675) && (ypos > 425 && ypos < 455)) {
                 if (input.isMousePressed(0)) {
                     //siła +
                     GameStatus.hero.fuerza++;
                     GameStatus.hero.levelPoints--;
-                    copyOfStrength++;
-                    copyOfLevelPoints--;
                 }
             }
             //agi + BUTTON
-            if ((xpos > 650 && xpos < 669) && (ypos > 382 && ypos < 405)) {
+            if ((xpos > 650 && xpos < 675) && (ypos > 375 && ypos < 405)) {
                 if (input.isMousePressed(0)) {
                     //zręczność +
                     GameStatus.hero.resistencia++;
                     GameStatus.hero.levelPoints--;
-                    copyOfAgility++;
-                    copyOfLevelPoints--;
                 }
             }
             //int + BUTTON
-            if ((xpos > 650 && xpos < 669) && (ypos > 332 && ypos < 355)) {
+            if ((xpos > 650 && xpos < 675) && (ypos > 325 && ypos < 355)) {
                 if (input.isMousePressed(0)) {
                     //obrona +
                     GameStatus.hero.magia++;
                     GameStatus.hero.levelPoints--;
-                    copyOfInteligence++;
-                    copyOfLevelPoints--;
                 }
             }
         }
@@ -211,18 +191,12 @@ public class CrearProtagonista extends BasicGameState {
             ctab[2] = opcionSeleccionada;
             if (input.isMousePressed(0)) {
                 switch (actualImage) {
-                    case 0: {
+                    case 0:
                         actualImage = 1;
                         break;
-                    }
-                    case 1: {
-                        actualImage = 2;
-                        break;
-                    }
-                    case 2: {
+                    case 1:
                         actualImage = 0;
                         break;
-                    }
                 }
             }
         }
@@ -242,7 +216,12 @@ public class CrearProtagonista extends BasicGameState {
         
         if ((xpos > 664 && xpos < 813) && (ypos > 220 && ypos < 263)) {
             ctab[0] = opcionSeleccionada;
-            if (input.isMousePressed(0)) {
+            if (input.isMousePressed(0) && !avatarName.equalsIgnoreCase("")) {
+                PlayState.gameStatus = new GameStatus();
+                GameStatus.spriteNumber = (actualImage + 1);
+                GameStatus.sprite = new Sprite();
+                GameStatus.hero.heroName = avatarName;
+                sbg.enterState(1);
             }
         }
     }
@@ -253,15 +232,13 @@ public class CrearProtagonista extends BasicGameState {
         fondo.draw(0, 0);
         fondoCrearProtagonista.draw(0, 0);
 
-        avatar[actualImage].draw(773, 215, 2.0f);
+        avatar[actualImage].draw(750, 230, 2.0f);
 
         Fonts.print18().drawString(10, 10, mouse);
         Fonts.print46().drawString(385, 60, "CREA TU PERSONAJE");
         Fonts.print28().drawString(415, 140, "NOMBRE:");
         Fonts.print28().drawString(610, 140, avatarName);
 
-        contador++;
-        if (contador % 70 == 0 || contador % 70 == 1) {
             switch (avatarName.length()) {
                 case 0:
                     posicion = 600;
@@ -291,12 +268,6 @@ public class CrearProtagonista extends BasicGameState {
                     posicion = 760;
                     break;
             }
-            Fonts.print28().drawString(posicion, 140, "|");
-        }
-
-        if (contador == 3000) {
-            contador = 0;
-        }
 
         Fonts.print18().drawString(410, 269, "Fuerza");
         Fonts.print18().drawString(410, 319, "Resistencia");

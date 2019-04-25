@@ -134,7 +134,7 @@ public class OptionsState extends BasicGameState {
         }
     }
 
-    public OptionsState(int state) {
+    public OptionsState() {
     }
 
     @Override

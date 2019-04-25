@@ -12,6 +12,11 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
+import states.CrearProtagonista;
+import states.Creditos;
+import states.Menu;
+import states.OptionsState;
+import states.PlayState;
 
 /**
  *
@@ -29,10 +34,11 @@ public class Game extends StateBasedGame {
 
     public Game() {
         super(GAMENAME);
-        this.addState(new states.Menu());
-        this.addState(new states.OptionsState(OPTIONS));
-        this.addState(new states.Creditos());
-        this.addState(new states.CrearProtagonista());
+        this.addState(new Menu());
+        this.addState(new OptionsState());
+        this.addState(new Creditos());
+        this.addState(new CrearProtagonista());
+        this.addState(new PlayState());
     }
 
     @Override
