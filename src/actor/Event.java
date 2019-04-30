@@ -12,16 +12,20 @@ public class Event {
 
     private Movement movement;
     private CollisionsFields collisionFields;
+    private Portals portals;
 
     public Event(Sprite sprite) throws SlickException {
         this.movement = new Movement();
         this.collisionFields = new CollisionsFields();
+        this.portals = new Portals();
     }
 
     public void update(GameContainer container, StateBasedGame sbg, int delta, GameStatus gs, Input input, int xPos, int yPos) throws SlickException {
 
         int oldX = GameStatus.pos_x_hero;
         int oldY = GameStatus.pos_y_hero;
+        
+        Keys.functionalKeyHandler(container, sbg, input, GameStatus.sprite.heroWidth, GameStatus.sprite.heroHeight);
 
         movement.go(input, gs, delta, GameStatus.sprite);
 
@@ -29,6 +33,8 @@ public class Event {
 
         int playerCenterX = GameStatus.pos_x_hero + (GameStatus.sprite.heroWidth / 2) - 7;
         int playerCenterY = GameStatus.pos_y_hero + (GameStatus.sprite.heroHeight / 2);
+        
+        portals.isEnter(gs, playerCenterX, playerCenterY);
 
         collisionFields.isCollision(gs, oldX, oldY);
 

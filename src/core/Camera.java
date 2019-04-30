@@ -42,33 +42,8 @@ public class Camera {
     }
 
     public void centerOn(float x, float y) {
-        cameraX = x - gc.getWidth() / 2;
-        cameraY = y - (gc.getHeight() / 2);
-
-        if (cameraX < 0) {
-            cameraX = 0;
-        }
-        if (cameraX + Game.WIDTH > mapWidth) {
-            cameraX = mapWidth - gc.getWidth();
-        }
-
-        if (cameraY < 0) {
-            cameraY = 0;
-        }
-        if (cameraY + Game.HEIGHT > (mapHeight + 120)) {
-            cameraY = (mapHeight + 120) - gc.getHeight();
-        }
-
-        if (mapWidth < core.Game.WIDTH) {
-            cameraX = ((mapWidth / 2) - (core.Game.WIDTH / 2));
-        }
-        if (mapHeight < core.Game.HEIGHT) {
-            cameraY = ((mapHeight / 2) + 80 - (core.Game.HEIGHT / 2));
-        }
-    }
-
-    public void centerOn(float x, float y, float height, float width) {
-        this.centerOn(x + width / 2, y + height / 2);
+        cameraX = 0;
+        cameraY = 0;
     }
 
     public void centerOn(Shape shape) {
@@ -76,26 +51,7 @@ public class Camera {
     }
 
     public void drawMap(int layer) {
-        this.drawMap(0, 0, layer);
-    }
-
-    public void drawMap(int offsetX, int offsetY, int layer) {
-
-        int tileOffsetX = (int) -(cameraX % tileWidth);
-        int tileOffsetY = (int) -(cameraY % tileHeight);
-
-        int tileIndexX = (int) (cameraX / tileWidth);
-        int tileIndexY = (int) (cameraY / tileHeight);
-
-        map.render(tileOffsetX + offsetX, tileOffsetY + offsetY, tileIndexX, tileIndexY, (gc.getWidth() - tileOffsetX) / tileWidth + 1, (gc.getHeight() - tileOffsetY) / tileHeight + 1, layer, false);
-    }
-
-    public void translateGraphics() {
-        gc.getGraphics().translate(-cameraX, -cameraY);
-    }
-
-    public void untranslateGraphics() {
-        gc.getGraphics().translate(cameraX, cameraY);
+        map.render(0, 0, layer);
     }
 
 }

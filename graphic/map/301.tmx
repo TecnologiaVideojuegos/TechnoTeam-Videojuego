@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="28" height="24" tilewidth="48" tileheight="30" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" name="301" tilewidth="48" tileheight="30" tilecount="400" columns="20">
+  <image source="../../Documentacion/Mapa cueva.png" width="960" height="600"/>
+ </tileset>
+ <tileset firstgid="401" source="coll.tsx"/>
+ <tileset firstgid="402" source="portal.tsx"/>
+ <layer id="1" name="cueva" width="28" height="24">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAE+XU1XcQZBzHYUZ3d3eOERvd3d0MRjN6dHfDRgi2YNAYYBIKJo2SCnYLSqqkAfr4F/he6++c5+77ns/dmyzZ/+siSE4KUpKK1KQhLelITwYykonMZCEr2chODnIG9HKRmzzkJR/5KUBBClGYIhSlGMUpQUlKUZoylA3olaM8FYikIlFUojJVqEo0MVSjOjWoSS1qU4e6Ab161KcBDWlEY5rQlGY0pwUtaUVr2tCWdrSnAx0Dep3oTBe60o3u9KAnvehNLH3oSxz96M8ABjKIwQG9IQwlnmEMZwQjGcVoxpDAWMYxnglMZBKTmcLUgN40pjODmcxiNnOYyzzms4CFLGIxS1jKMpaTSFJAbwUrWcVqHmANa3mQh3iYR3iUx3icJ1jHep7kKZ4O6D3DBjayic1sYSvb2M6zPMfzvMAOdvIiL/Eyr/BqQO81drGbPezldd5gH/t5k7d4m3d4l/c4wEEOcZgjAb2jHOM47/MBJzjJKU5zhrN8yEec4zwf8wmf8hmfB/S+4Eu+4mu+4Vu+43t+4AIX+ZGfuMRlrnCVa1zn54DeL/zKDW5yi9vc4S6/8Tt/8Cf3uM9f/zz2+UaQnBSkjPj3Xiqb1KQhLelITwYykonMZCEr2chODnKSi9zkIW9AL59NfgpQkEIUpghFKUZxSlCSUpSmDGUpR3kqEBnQq2gTRSUqU4WqRBNDNapTg5rUojZ1qEs96tOAhgG9RjaNaUJTmtGcFrSkFa1pQ1va0Z4OdKQTnelC14BeN5vu9KAnvehNLH3oSxz96M8ABjKIwQxhKPEMC+gNtxnBSEYxmjEkMJZxjGcCE5nEZKYwlWlMZwYzA3qzbGYzh7nMYz4LWMgiFrOEpSxjOYkksYKVrGJ1QO+/dn8DKMJs6IAKAAA=
+  </data>
+ </layer>
+ <layer id="2" name="coll" width="28" height="24">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAE5vIyDBgYCIjbfBItg+ZJuQubGxcZuKzj1qAWP+Ro5dc+7CpISYu8Jk52OwjxSx6xhEh+4iNP2LNpsQ8cuwjBKhlH7F2UtM+9PIFX7qmpn0wOVLNw6ePVHNobR8uc6lhHyn5YqiHJyn1JDXsw6eH2LKVFnggAQB9jXVDgAoAAA==
+  </data>
+ </layer>
+ <layer id="3" name="portal" width="28" height="24">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAE2NgGAXDCUxiHGgXjIJRMApGwSgYBaNgFOAHAF5hBrCACgAA
+  </data>
+ </layer>
+</map>

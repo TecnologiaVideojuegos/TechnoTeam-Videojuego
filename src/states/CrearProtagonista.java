@@ -20,7 +20,7 @@ public class CrearProtagonista extends BasicGameState {
     Image fondoCrearProtagonista;
     String mouse;
 
-    private static String avatarName = "";
+    private static String avatarName="";
 
     Image[] avatar = new Image[3];
 
@@ -33,6 +33,7 @@ public class CrearProtagonista extends BasicGameState {
     Color opcionSeleccionada = Color.orange;
 
     Color ctab[] = {colorTexto, colorTexto, colorTexto};
+
 
     public CrearProtagonista() {
     }
@@ -50,9 +51,10 @@ public class CrearProtagonista extends BasicGameState {
 
         avatar[0] = new Image("graphic/heroSprite/avatar1.png").getSubImage(0, 0, 55, 64);
         avatar[1] = new Image("graphic/heroSprite/avatar2.png").getSubImage(0, 0, 55, 64);
+        
 
         GameStatus.hero = new Hero();
-
+         
         actualImage = 0;
     }
 
@@ -211,7 +213,7 @@ public class CrearProtagonista extends BasicGameState {
             }
         }
         //START BUTTON
-
+        
         if ((xpos > 664 && xpos < 813) && (ypos > 220 && ypos < 263)) {
             ctab[0] = opcionSeleccionada;
             if (input.isMousePressed(0) && !avatarName.equalsIgnoreCase("")) {
@@ -237,35 +239,35 @@ public class CrearProtagonista extends BasicGameState {
         Fonts.print28().drawString(415, 140, "NOMBRE:");
         Fonts.print28().drawString(610, 140, avatarName);
 
-        switch (avatarName.length()) {
-            case 0:
-                posicion = 600;
-                break;
-            case 1:
-                posicion = 620;
-                break;
-            case 2:
-                posicion = 640;
-                break;
-            case 3:
-                posicion = 660;
-                break;
-            case 4:
-                posicion = 680;
-                break;
-            case 5:
-                posicion = 700;
-                break;
-            case 6:
-                posicion = 720;
-                break;
-            case 7:
-                posicion = 740;
-                break;
-            case 8:
-                posicion = 760;
-                break;
-        }
+            switch (avatarName.length()) {
+                case 0:
+                    posicion = 600;
+                    break;
+                case 1:
+                    posicion = 620;
+                    break;
+                case 2:
+                    posicion = 640;
+                    break;
+                case 3:
+                    posicion = 660;
+                    break;
+                case 4:
+                    posicion = 680;
+                    break;
+                case 5:
+                    posicion = 700;
+                    break;
+                case 6:
+                    posicion = 720;
+                    break;
+                case 7:
+                    posicion = 740;
+                    break;
+                case 8:
+                    posicion = 760;
+                    break;
+            }
 
         Fonts.print18().drawString(410, 269, "Fuerza");
         Fonts.print18().drawString(410, 319, "Resistencia");

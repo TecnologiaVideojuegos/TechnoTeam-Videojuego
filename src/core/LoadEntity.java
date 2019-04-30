@@ -1,6 +1,15 @@
 package core;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import model.Portal;
 
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
@@ -17,32 +26,26 @@ public class LoadEntity {
     public static Rectangle recPlayer, recField;
 
     public void updateEntityFieldList(TiledMap map) {
-        System.out.println(map.getWidth() + " " + map.getHeight());
-        for (int i = 3; i < 4; i++) {
-            exist = new boolean[map.getWidth()][map.getHeight()];
-            testField = map.getTileId(0, 0, i);
-            System.out.println(testField);
-            for (int j = 0; j < map.getWidth(); j++) {
-                for (int k = 0; k < map.getHeight(); k++) {
-                    collisionTileID = map.getTileId(j, k, i);
-                    if (collisionTileID == testField) {
-                        exist[j][k] = true;
-                    }
+        //exist = new boolean[map.getWidth()][map.getHeight()];
+        exist = new boolean[map.getWidth()][map.getHeight()];
+        testField = map.getTileId(0, 0, 1);
+        for(int i=0; i< exist.length; i++){
+            for(int j=0; j< exist[i].length; j++){
+                collisionTileID = map.getTileId(i, j, 1);
+                if(collisionTileID==testField){
+                    exist[i][j] = true;
                 }
             }
-            if (i == 3) {
-                updateCollisionFields(map);
-            }
         }
-
+        updateCollisionFields(map);
     }
 
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
-        for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getHeight(); j++) {
+        for (int i = 0; i < exist.length; i++) {
+            for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {
-                    recField = new Rectangle(i * 32, j * 32, 32, 32);
+                    recField = new Rectangle(i * 48, j * 30, 48, 30);
                     collisions.add(recField);
                 }
             }
@@ -50,27 +53,59 @@ public class LoadEntity {
         collisions.trimToSize();
     }
 
-    public void updateNpcFields(TiledMap map) {
-        npc = new ArrayList<>();
-        for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getHeight(); j++) {
-                if (exist[i][j] == true) {
-                    recField = new Rectangle(i * 32, j * 32, 32, 32);
-                    npc.add(recField);
-                }
-            }
-        }
-    }
+    public void updatePortalMapList(ArrayList<Portal> portalMapList) {
+        Portal newPortal;
+        String path = "res/portal/" + GameStatus.levelID + ".xml";
+        System.out.println(path);
+        File filePath = new File(path);
+        try {
+            XMLInputFactory iFactory = XMLInputFactory.newInstance();
+            InputStream xmlFile = new FileInputStream(filePath);
+            XMLStreamReader parser = iFactory.createXMLStreamReader(xmlFile);
+            newPortal = new Portal();
+            while (parser.hasNext()) {
+                switch (parser.next()) {
+                    case XMLStreamConstants.START_ELEMENT:
+                        if (parser.getLocalName().equals("Portal")) {
+                            newPortal = new Portal();
+                        }
+                        if (parser.getLocalName().equals("xStart")) {
+                            newPortal.setxStart(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("xEnd")) {
+                            newPortal.setxEnd(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("yStart")) {
+                            newPortal.setyStart(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("yEnd")) {
+                            newPortal.setyEnd(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("levelID")) {
+                            newPortal.setLevelID(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("xNew")) {
+                            newPortal.setxNew(Integer.parseInt(parser.getElementText()));
+                        }
+                        if (parser.getLocalName().equals("yNew")) {
+                            newPortal.setyNew(Integer.parseInt(parser.getElementText()));
+                        }
+                        break;
+                    case XMLStreamConstants.END_ELEMENT:
 
-    public void updateMobsFields(TiledMap map) {
-        mobs = new ArrayList<>();
-        for (int i = 0; i < map.getWidth(); i++) {
-            for (int j = 0; j < map.getHeight(); j++) {
-                if (exist[i][j] == true) {
-                    recField = new Rectangle(i * 32, j * 32, 32, 32);
-                    mobs.add(recField);
+                        if (parser.getLocalName().equals("Portal")) {
+                            portalMapList.add(newPortal);
+                            System.out.println(newPortal);
+                        }
+                        break;
                 }
             }
+        } catch (FileNotFoundException e1) {
+            System.out.println("Exception FileNotFoundException - class:LoadEntity   methode:updatePortalMapList ");
+        } catch (XMLStreamException e2) {
+            System.out.println("Exception XMLStreamException - class:LoadEntity   methode:updatePortalMapList ");
+        } catch (NumberFormatException e3) {
+            System.out.println("Exception NumberFormatException - class:LoadEntity   methode:updatePortalMapList ");
         }
     }
 }

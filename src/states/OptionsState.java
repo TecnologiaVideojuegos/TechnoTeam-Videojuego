@@ -40,11 +40,11 @@ public class OptionsState extends BasicGameState {
 
         Image menuF = new Image("graphic/menu/backgroundMainMenu.jpg");
         g.drawImage(menuF, 0, 0);
-        Image buttonBB = new Image("graphic/menu/buttonMM.png");
-
+        Image buttonBB = new Image("graphic/menu/buttonMM.png");       
+        
         Fonts.print18().drawString(10, 10, "wsp. myszy: " + mouse);
         Fonts.print18().drawString(10, 30, onScreenLoc);
-
+        
         int bx = 500;
         int by = 150;
         for (int i = 0; i < 5; i++) {
@@ -76,7 +76,7 @@ public class OptionsState extends BasicGameState {
         for (int j = 0; j < ctab.length; j++) {
             ctab[j] = c;
         }
-
+        
         //opcja 1 
         if ((xpos > 520 && xpos < 777) && (ypos > 410 && ypos < 484)) {
             if (input.isMouseButtonDown(0)) {
@@ -110,9 +110,10 @@ public class OptionsState extends BasicGameState {
         ///Prędkość poruszania
         if ((xpos > 520 && xpos < 777) && (ypos > 156 && ypos < 229)) {
             if (input.isMouseButtonDown(0)) {
-                if (model.Hero.movementSpeed < 7) {
+                if(model.Hero.movementSpeed < 7){
                     model.Hero.movementSpeed += 1;
-                } else {
+                }
+                else{
                     model.Hero.movementSpeed = 1.0;
                 }
             }
@@ -124,7 +125,7 @@ public class OptionsState extends BasicGameState {
         //powrót do menu
         if ((xpos > 520 && xpos < 777) && (ypos > 69 && ypos < 144)) {
             if (input.isMouseButtonDown(0)) {
-                sbg.enterState(0);
+                sbg.enterState(0); 
             }
             ctab[4] = Color.orange;
             if (input.isMouseButtonDown(0)) {

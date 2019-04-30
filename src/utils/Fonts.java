@@ -26,14 +26,14 @@ public class Fonts {
         } catch (IOException ioe) {
             System.out.println("FILE - IOException");
         }
-
+        
         printLabel = new TrueTypeFont(font.deriveFont(Font.BOLD, 18f), true, tabc);
         printHead = new TrueTypeFont(font.deriveFont(Font.BOLD, 28f), true, tabc);
         printBig = new TrueTypeFont(font.deriveFont(Font.BOLD, 25f), true, tabc);
         printMediumLogo = new TrueTypeFont(font.deriveFont(Font.BOLD, 46f), true, tabc);
         printBigLogo = new TrueTypeFont(font.deriveFont(Font.BOLD, 78f), true, tabc);
     }
-
+    
     public static TrueTypeFont print18() {
         return printLabel;
     }
@@ -41,15 +41,15 @@ public class Fonts {
     public static TrueTypeFont print28() {
         return printHead;
     }
-
+    
     public static TrueTypeFont print25() {
         return printBig;
     }
-
+    
     public static TrueTypeFont print46() {
         return printMediumLogo;
     }
-
+    
     public static TrueTypeFont print78() {
         return printBigLogo;
     }

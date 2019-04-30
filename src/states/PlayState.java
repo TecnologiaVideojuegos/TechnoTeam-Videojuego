@@ -1,7 +1,7 @@
 package states;
 
-import actor.*;
-import core.*;
+import actor.Event;
+import core.GameStatus;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -15,11 +15,10 @@ public class PlayState extends BasicGameState {
 
     public static boolean needToMapUpdate = false;
 
-    private Camera camera;
-
     public static GameStatus gameStatus;
 
     private Event event;
+
 
     public PlayState() {
     }
@@ -32,7 +31,6 @@ public class PlayState extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
         gameStatus = new GameStatus();
-        camera = new Camera(container, gameStatus.map);
         event = new actor.Event(GameStatus.sprite);
     }
 
@@ -52,28 +50,21 @@ public class PlayState extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
-
-        camera.centerOn(GameStatus.pos_x_hero, GameStatus.pos_y_hero);
-
-        camera.drawMap(0);
-
-        camera.translateGraphics();
-
-        GameStatus.sprite.avatar.draw(GameStatus.pos_x_hero, GameStatus.pos_y_hero);
-
-    }
-
-    public void updateGameStatus(GameContainer container) {
         try {
             gameStatus.map = new TiledMap("graphic/map/" + Integer.toString(GameStatus.levelID) + ".tmx");
-            gameStatus.map.render(0, 0);
-            camera = new core.Camera(container, gameStatus.map);
+            gameStatus.map.render(0, 0, 0);
 
             gameStatus.updateEntityFieldList(gameStatus.map);
 
         } catch (SlickException e) {
             System.out.println("Error en updateGameStatus playState");
         }
+        GameStatus.sprite.avatar.draw(GameStatus.pos_x_hero, GameStatus.pos_y_hero);
+
+    }
+
+    public void updateGameStatus(GameContainer container) {
         needToMapUpdate = false;
+        gameStatus.updatePortalMapList(gameStatus.portalMapList);
     }
 }

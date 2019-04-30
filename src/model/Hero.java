@@ -55,7 +55,7 @@ public class Hero {
         levelPoints = 10;
     }
 
-    public Hero(String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana, double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
+    public Hero(String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana,double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
         this.heroName = heroName;
         this.heroLevel = heroLevel;
         this.tempHeroExperience = tempHeroExperience;

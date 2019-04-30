@@ -7,6 +7,7 @@ import org.newdawn.slick.SlickException;
 
 public class Sprite {
 
+
     public Image imgSprite;
     public int heroHeight, heroWidth;
 
@@ -17,7 +18,7 @@ public class Sprite {
 
     public Sprite() throws SlickException {
 
-        imgSprite = new Image("graphic/heroSprite/avatar" + GameStatus.spriteNumber + ".png");
+        imgSprite = new Image("graphic/heroSprite/avatars" + GameStatus.spriteNumber + ".png");
 
         int widthSubImageLength = 3;
 
