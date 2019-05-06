@@ -1,10 +1,10 @@
-package actor;
+package personaje;
 
-import core.GameStatus;
+import principal.GameStatus;
 import org.newdawn.slick.SlickException;
-import states.PlayState;
+import estados.Play;
 
-public class Portals {
+public class Portales {
 
     public void isEnter(GameStatus gameStatus, int playerCenterX, int playerCenterY) throws SlickException {
         for (int i = 0; i < gameStatus.portalMapList.size(); i++) {
@@ -13,7 +13,7 @@ public class Portals {
                 GameStatus.levelID = gameStatus.portalMapList.get(i).levelID;
                 GameStatus.pos_x_hero = gameStatus.portalMapList.get(i).xNew;
                 GameStatus.pos_y_hero = gameStatus.portalMapList.get(i).yNew;
-                PlayState.needToMapUpdate = true;
+                Play.needToMapUpdate = true;
             }
         }
     }

@@ -1,11 +1,11 @@
-package core;
+package principal;
 
 import java.util.ArrayList;
-import model.Hero;
+import modelos.Hero;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 
-public class GameStatus extends core.LoadEntity {
+public class GameStatus extends principal.LoadEntity {
 
 
     public static boolean musicOn;
@@ -22,7 +22,7 @@ public class GameStatus extends core.LoadEntity {
 
     LoadEntity loadEntity;
     
-    public ArrayList<model.Portal> portalMapList;
+    public ArrayList<modelos.Portal> portalMapList;
 
     public GameStatus() throws SlickException {
         musicOn = true;

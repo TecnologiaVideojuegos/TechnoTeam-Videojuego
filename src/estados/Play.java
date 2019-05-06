@@ -1,7 +1,7 @@
-package states;
+package estados;
 
-import actor.Event;
-import core.GameStatus;
+import personaje.Event;
+import principal.GameStatus;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -11,7 +11,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
 
-public class PlayState extends BasicGameState {
+public class Play extends BasicGameState {
 
     public static boolean needToMapUpdate = false;
 
@@ -20,7 +20,7 @@ public class PlayState extends BasicGameState {
     private Event event;
 
 
-    public PlayState() {
+    public Play() {
     }
 
     @Override
@@ -31,7 +31,7 @@ public class PlayState extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
         gameStatus = new GameStatus();
-        event = new actor.Event(GameStatus.sprite);
+        event = new personaje.Event(GameStatus.sprite);
     }
 
     @Override

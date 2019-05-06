@@ -1,4 +1,4 @@
-package core;
+package principal;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,7 +9,7 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import model.Portal;
+import modelos.Portal;
 
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;

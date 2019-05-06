@@ -1,9 +1,9 @@
-package actor;
+package personaje;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.state.StateBasedGame;
-import screenBlur.ScreenClass;
+import utils.ScreenClass;
 
 public class Keys {
     public static void functionalKeyHandler(GameContainer gc, StateBasedGame sbg, Input input, int xpos, int ypos) {
@@ -33,7 +33,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 3) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(3);
             }
         }
@@ -42,7 +42,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 4) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(4);
             }
         }
@@ -51,7 +51,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 5) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(5);
             }
         }
@@ -61,7 +61,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 6) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(6);
             }
         }
@@ -78,7 +78,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 12) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(12);
             }
         }
@@ -87,7 +87,7 @@ public class Keys {
             if (sbg.getCurrentStateID() == 9) {
                 sbg.enterState(1);
             } else {
-                screenBlur.ScreenClass.makeScreen(xpos, ypos);
+                utils.ScreenClass.makeScreen(xpos, ypos);
                 sbg.enterState(9);
             }
         }

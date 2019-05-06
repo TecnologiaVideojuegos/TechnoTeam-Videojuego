@@ -1,8 +1,6 @@
-package states;
+package estados;
 
-import core.GameStatus;
 import utils.Fonts;
-import model.Hero;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -13,6 +11,8 @@ import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 public class Menu extends BasicGameState {
 
@@ -58,21 +58,21 @@ public class Menu extends BasicGameState {
         if ((pos_x > 520 && pos_x < 770) && (pos_y > 410 && pos_y < 480)) {
             colorOpcionSelecionada[0] = Color.orange;
             if (input.isMouseButtonDown(0)) {
-                sbg.enterState(14);
+                sbg.enterState(14, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }
         //Opciones
         if ((pos_x > 520 && pos_x < 770) && (pos_y > 320 && pos_y < 390)) {
             colorOpcionSelecionada[1] = Color.orange;
             if (input.isMouseButtonDown(0)) {
-                sbg.enterState(2);
+                sbg.enterState(2, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }
         //Créditos
         if ((pos_x > 520 && pos_x < 770) && (pos_y > 240 && pos_y < 310)) {
             colorOpcionSelecionada[2] = Color.orange;
             if (input.isMouseButtonDown(0)) {
-                sbg.enterState(8);
+                sbg.enterState(8, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }
 

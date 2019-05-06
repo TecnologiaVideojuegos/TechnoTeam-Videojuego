@@ -1,4 +1,4 @@
-package screenBlur;
+package utils;
 
 import java.awt.AWTException;
 import java.awt.MouseInfo;

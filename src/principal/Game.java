@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package core;
+package principal;
 
 
 import java.util.logging.Level;
@@ -12,11 +12,11 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
-import states.CrearProtagonista;
-import states.Creditos;
-import states.Menu;
-import states.OptionsState;
-import states.PlayState;
+import estados.CrearProtagonista;
+import estados.Creditos;
+import estados.Menu;
+import estados.Opciones;
+import estados.Play;
 
 /**
  *
@@ -35,11 +35,11 @@ public class Game extends StateBasedGame {
     public Game() {
         super(GAMENAME);
         this.addState(new Menu());
-        this.addState(new OptionsState());
+        this.addState(new Opciones());
         this.addState(new Creditos());
         this.addState(new CrearProtagonista());
-        this.addState(new PlayState());
-        this.addState(new states.PauseState());
+        this.addState(new Play());
+        this.addState(new estados.Pause());
     }
 
     @Override
