@@ -1,14 +1,14 @@
-package actor;
+package personaje;
 
-import core.GameStatus;
-import core.Sprite;
-import model.Hero;
+import principal.GameStatus;
+import principal.Sprite;
+import modelos.Hero;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-public class Movement extends Sprite {
+public class MovimientoPersonaje extends Sprite {
 
-    public Movement() throws SlickException {
+    public MovimientoPersonaje() throws SlickException {
     }
 
     public void go(Input input, GameStatus gs, int delta, Sprite sprite) {

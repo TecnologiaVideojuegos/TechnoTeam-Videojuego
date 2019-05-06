@@ -1,9 +1,9 @@
-package states;
+package estados;
 
-import core.GameStatus;
-import core.Sprite;
+import principal.GameStatus;
+import principal.Sprite;
 import utils.Fonts;
-import model.Hero;
+import modelos.Hero;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -13,6 +13,8 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 public class CrearProtagonista extends BasicGameState {
 
@@ -20,7 +22,7 @@ public class CrearProtagonista extends BasicGameState {
     Image fondoCrearProtagonista;
     String mouse;
 
-    private static String avatarName="";
+    private static String avatarName = "";
 
     Image[] avatar = new Image[3];
 
@@ -33,7 +35,6 @@ public class CrearProtagonista extends BasicGameState {
     Color opcionSeleccionada = Color.orange;
 
     Color ctab[] = {colorTexto, colorTexto, colorTexto};
-
 
     public CrearProtagonista() {
     }
@@ -51,10 +52,9 @@ public class CrearProtagonista extends BasicGameState {
 
         avatar[0] = new Image("graphic/heroSprite/avatar1.png").getSubImage(0, 0, 55, 64);
         avatar[1] = new Image("graphic/heroSprite/avatar2.png").getSubImage(0, 0, 55, 64);
-        
 
         GameStatus.hero = new Hero();
-         
+
         actualImage = 0;
     }
 
@@ -69,7 +69,7 @@ public class CrearProtagonista extends BasicGameState {
         }
 
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
-            sbg.enterState(0);
+            sbg.enterState(0, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
         }
         if (input.isKeyPressed(Input.KEY_BACK)) {
             if (avatarName.length() > 0) {
@@ -142,7 +142,6 @@ public class CrearProtagonista extends BasicGameState {
         if (GameStatus.hero.resistencia > 1) {
             if ((xpos > 610 && xpos < 640) && (ypos > 375 && ypos < 405)) {
                 if (input.isMousePressed(0)) {
-                    //zręczność -
                     GameStatus.hero.resistencia--;
                     GameStatus.hero.levelPoints++;
                 }
@@ -152,7 +151,6 @@ public class CrearProtagonista extends BasicGameState {
         if (GameStatus.hero.magia > 1) {
             if ((xpos > 610 && xpos < 640) && (ypos > 325 && ypos < 355)) {
                 if (input.isMousePressed(0)) {
-                    //obrona -
                     GameStatus.hero.magia--;
                     GameStatus.hero.levelPoints++;
                 }
@@ -163,7 +161,6 @@ public class CrearProtagonista extends BasicGameState {
             //str + BUTTON
             if ((xpos > 650 && xpos < 675) && (ypos > 425 && ypos < 455)) {
                 if (input.isMousePressed(0)) {
-                    //siła +
                     GameStatus.hero.fuerza++;
                     GameStatus.hero.levelPoints--;
                 }
@@ -171,7 +168,6 @@ public class CrearProtagonista extends BasicGameState {
             //agi + BUTTON
             if ((xpos > 650 && xpos < 675) && (ypos > 375 && ypos < 405)) {
                 if (input.isMousePressed(0)) {
-                    //zręczność +
                     GameStatus.hero.resistencia++;
                     GameStatus.hero.levelPoints--;
                 }
@@ -179,7 +175,6 @@ public class CrearProtagonista extends BasicGameState {
             //int + BUTTON
             if ((xpos > 650 && xpos < 675) && (ypos > 325 && ypos < 355)) {
                 if (input.isMousePressed(0)) {
-                    //obrona +
                     GameStatus.hero.magia++;
                     GameStatus.hero.levelPoints--;
                 }
@@ -204,8 +199,8 @@ public class CrearProtagonista extends BasicGameState {
         if ((xpos > 457 && xpos < 606) && (ypos > 220 && ypos < 263)) {
             ctab[1] = opcionSeleccionada;
             if (input.isMousePressed(0)) {
-                core.GameStatus.hero = new Hero();
-                sbg.enterState(0);
+                principal.GameStatus.hero = new Hero();
+                sbg.enterState(0, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 
                 if (input.isMouseButtonDown(0)) {
                     ctab[1] = Color.gray;
@@ -213,15 +208,15 @@ public class CrearProtagonista extends BasicGameState {
             }
         }
         //START BUTTON
-        
+
         if ((xpos > 664 && xpos < 813) && (ypos > 220 && ypos < 263)) {
             ctab[0] = opcionSeleccionada;
             if (input.isMousePressed(0) && !avatarName.equalsIgnoreCase("")) {
-                PlayState.gameStatus = new GameStatus();
+                Play.gameStatus = new GameStatus();
                 GameStatus.spriteNumber = (actualImage + 1);
                 GameStatus.sprite = new Sprite();
                 GameStatus.hero.heroName = avatarName;
-                sbg.enterState(1);
+                sbg.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }
     }
@@ -239,35 +234,35 @@ public class CrearProtagonista extends BasicGameState {
         Fonts.print28().drawString(415, 140, "NOMBRE:");
         Fonts.print28().drawString(610, 140, avatarName);
 
-            switch (avatarName.length()) {
-                case 0:
-                    posicion = 600;
-                    break;
-                case 1:
-                    posicion = 620;
-                    break;
-                case 2:
-                    posicion = 640;
-                    break;
-                case 3:
-                    posicion = 660;
-                    break;
-                case 4:
-                    posicion = 680;
-                    break;
-                case 5:
-                    posicion = 700;
-                    break;
-                case 6:
-                    posicion = 720;
-                    break;
-                case 7:
-                    posicion = 740;
-                    break;
-                case 8:
-                    posicion = 760;
-                    break;
-            }
+        switch (avatarName.length()) {
+            case 0:
+                posicion = 600;
+                break;
+            case 1:
+                posicion = 620;
+                break;
+            case 2:
+                posicion = 640;
+                break;
+            case 3:
+                posicion = 660;
+                break;
+            case 4:
+                posicion = 680;
+                break;
+            case 5:
+                posicion = 700;
+                break;
+            case 6:
+                posicion = 720;
+                break;
+            case 7:
+                posicion = 740;
+                break;
+            case 8:
+                posicion = 760;
+                break;
+        }
 
         Fonts.print18().drawString(410, 269, "Fuerza");
         Fonts.print18().drawString(410, 319, "Resistencia");

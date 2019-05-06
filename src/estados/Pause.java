@@ -1,6 +1,6 @@
-package states;
+package estados;
 
-import core.GameStatus;
+import principal.GameStatus;
 import utils.Fonts;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
@@ -12,7 +12,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class PauseState extends BasicGameState {
+public class Pause extends BasicGameState {
 
     private String actualScr;
 
@@ -24,7 +24,7 @@ public class PauseState extends BasicGameState {
 
     private final Color colorTextos[] = {colorTexto, colorTexto, colorTexto, colorTexto};
 
-    public PauseState() {
+    public Pause() {
     }
 
     @Override
@@ -95,7 +95,7 @@ public class PauseState extends BasicGameState {
                 if (actualSubWindow == 0) {
                     System.exit(0);
                 } else {
-                    core.GameStatus.musicOn = !core.GameStatus.musicOn;
+                    principal.GameStatus.musicOn = !principal.GameStatus.musicOn;
                 }
             }
         }
@@ -112,7 +112,7 @@ public class PauseState extends BasicGameState {
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 
-        actualScr = screenBlur.ScreenClass.screenNumber();
+        actualScr = utils.ScreenClass.screenNumber();
         Image skrinGB = new Image(actualScr);
         g.drawImage(skrinGB, 0, 0);
         Image menuW = new Image("graphic/menu/PauseState.png");

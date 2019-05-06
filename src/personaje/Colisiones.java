@@ -1,11 +1,11 @@
-package actor;
+package personaje;
 
-import core.GameStatus;
-import core.LoadEntity;
+import principal.GameStatus;
+import principal.LoadEntity;
 
-public class CollisionsFields {
+public class Colisiones {
 
-    public CollisionsFields() {
+    public Colisiones() {
     }
 
     public void isCollision(GameStatus gs, int oldX, int oldY) {

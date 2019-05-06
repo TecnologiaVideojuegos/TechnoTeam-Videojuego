@@ -1,4 +1,4 @@
-package states;
+package estados;
 
 import utils.Fonts;
 import org.lwjgl.input.Mouse;
@@ -10,6 +10,8 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 public class Creditos extends BasicGameState{
 
@@ -54,7 +56,7 @@ public class Creditos extends BasicGameState{
         //BACK BUTTON
         if ((pos_x > 520 && pos_x < 770) && (pos_y > 70 && pos_y < 100)) {
             if (input.isMouseButtonDown(0)) {
-                sbg.enterState(0);
+                sbg.enterState(0, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
             colorOpcionSelecionada[0] = Color.orange;
             if (input.isMouseButtonDown(0)) {

@@ -1,4 +1,4 @@
-package model;
+package modelos;
 public class Portal {
     
     //x rozpoczecia portalu
