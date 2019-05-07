@@ -29,7 +29,7 @@ public class Event {
 
         movement.go(input, gs, delta, GameStatus.sprite);
 
-        principal.LoadEntity.recPlayer = new Rectangle(GameStatus.pos_x_hero, GameStatus.pos_y_hero, GameStatus.sprite.heroWidth, GameStatus.sprite.heroHeight - 5);
+        principal.LoadEntity.celdaJugador = new Rectangle(GameStatus.pos_x_hero, GameStatus.pos_y_hero, GameStatus.sprite.heroWidth, GameStatus.sprite.heroHeight - 5);
 
         int playerCenterX = GameStatus.pos_x_hero + (GameStatus.sprite.heroWidth / 2) - 7;
         int playerCenterY = GameStatus.pos_y_hero + (GameStatus.sprite.heroHeight / 2);

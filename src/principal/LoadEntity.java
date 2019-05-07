@@ -16,14 +16,14 @@ import org.newdawn.slick.tiled.TiledMap;
 
 public class LoadEntity {
 
-    int collisionID;
-    public int collisionTileID;
+    int colisionID;
+    public int colisionTileID;
     public int testField, testPortal;
     boolean[][] exist;
-    public static ArrayList<Rectangle> collisions;
+    public static ArrayList<Rectangle> colisiones;
     public static ArrayList<Rectangle> npc;
     public static ArrayList<Rectangle> mobs;
-    public static Rectangle recPlayer, recField;
+    public static Rectangle celda, celdaJugador;
 
     public void updateEntityFieldList(TiledMap map) {
         //exist = new boolean[map.getWidth()][map.getHeight()];
@@ -31,8 +31,8 @@ public class LoadEntity {
         testField = map.getTileId(0, 0, 1);
         for(int i=0; i< exist.length; i++){
             for(int j=0; j< exist[i].length; j++){
-                collisionTileID = map.getTileId(i, j, 1);
-                if(collisionTileID==testField){
+                colisionTileID = map.getTileId(i, j, 1);
+                if(colisionTileID==testField){
                     exist[i][j] = true;
                 }
             }
@@ -41,16 +41,16 @@ public class LoadEntity {
     }
 
     public void updateCollisionFields(TiledMap map) {
-        collisions = new ArrayList<>();
+        colisiones = new ArrayList<>();
         for (int i = 0; i < exist.length; i++) {
             for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {
-                    recField = new Rectangle(i * 48, j * 30, 48, 30);
-                    collisions.add(recField);
+                    celda = new Rectangle(i * 48, j * 30, 48, 30);
+                    colisiones.add(celda);
                 }
             }
         }
-        collisions.trimToSize();
+        colisiones.trimToSize();
     }
 
     public void updatePortalMapList(ArrayList<Portal> portalMapList) {
