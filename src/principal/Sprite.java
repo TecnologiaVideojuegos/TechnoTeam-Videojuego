@@ -11,7 +11,7 @@ public class Sprite {
     public Image imgSprite;
     public int heroHeight, heroWidth;
 
-    int durationScalar = (int) (100 / Hero.movementSpeed);
+    int durationScalar = (int) (100);
 
     public int[] duration = {durationScalar, durationScalar, durationScalar};
     public Animation avatar, movingUp, movingDown, movingLeft, movingRight;

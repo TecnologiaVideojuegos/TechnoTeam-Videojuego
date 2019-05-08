@@ -26,7 +26,6 @@ public class LoadEntity {
     public static Rectangle recPlayer, recField;
 
     public void updateEntityFieldList(TiledMap map) {
-        //exist = new boolean[map.getWidth()][map.getHeight()];
         exist = new boolean[map.getWidth()][map.getHeight()];
         testField = map.getTileId(0, 0, 1);
         for(int i=0; i< exist.length; i++){
@@ -45,7 +44,7 @@ public class LoadEntity {
         for (int i = 0; i < exist.length; i++) {
             for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {
-                    recField = new Rectangle(i * 48, j * 30, 48, 30);
+                    recField = new Rectangle(i * 16, j * 16, 16, 16);
                     collisions.add(recField);
                 }
             }

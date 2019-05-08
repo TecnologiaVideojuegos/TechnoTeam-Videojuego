@@ -27,7 +27,7 @@ public class GameStatus extends principal.LoadEntity {
     public GameStatus() throws SlickException {
         musicOn = true;
 
-        levelID = 300;
+        levelID = 400;
         mapPath = "graphic/map/" + Integer.toString(levelID) + ".tmx";
         map = new TiledMap(mapPath);
 

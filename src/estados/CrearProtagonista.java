@@ -15,6 +15,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+import personaje.Ataque;
 
 public class CrearProtagonista extends BasicGameState {
 
@@ -23,6 +24,9 @@ public class CrearProtagonista extends BasicGameState {
     String mouse;
 
     private static String avatarName = "";
+    public Ataque ataque1;
+    public Ataque ataque2;
+    public Ataque ataque3;
 
     Image[] avatar = new Image[3];
 
@@ -216,6 +220,18 @@ public class CrearProtagonista extends BasicGameState {
                 GameStatus.spriteNumber = (actualImage + 1);
                 GameStatus.sprite = new Sprite();
                 GameStatus.hero.heroName = avatarName;
+                if(actualImage==0){
+                    ataque1 = new Ataque(35, 30, "Pianazo1", "Lanzará un piano para causar un daño leve", 10);
+                    ataque2 = new Ataque(55, 10, "Metrica Exacta1", "Regañará al enemigo por no llevar el ritmo acorde e inflingirá daño por humillación", 20);
+                    ataque3 = new Ataque(75, 5, "Peluco Victoriano1", "Lanzará su tremenda peluca para destrozar los sueños capilares del enemigo, causando un daño LETAL!!!", 40);
+                }else if(actualImage==1){
+                    ataque1 = new Ataque(35, 30, "Pianazo2", "Lanzará un piano para causar un daño leve", 10);
+                    ataque2 = new Ataque(55, 10, "Metrica Exacta2", "Regañará al enemigo por no llevar el ritmo acorde e inflingirá daño por humillación", 20);
+                    ataque3 = new Ataque(75, 5, "Peluco Victoriano2", "Lanzará su tremenda peluca para destrozar los sueños capilares del enemigo, causando un daño LETAL!!!", 40);  
+                }
+                GameStatus.hero.getAtaques().add(ataque1);
+                GameStatus.hero.getAtaques().add(ataque2);
+                GameStatus.hero.getAtaques().add(ataque3);
                 sbg.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }

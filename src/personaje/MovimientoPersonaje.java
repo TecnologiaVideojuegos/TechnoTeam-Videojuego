@@ -16,22 +16,22 @@ public class MovimientoPersonaje extends Sprite {
         if (input.isKeyDown(Input.KEY_W) || input.isKeyDown(Input.KEY_UP)) {
             sprite.avatar = sprite.movingUp;
             sprite.avatar.update(delta);
-            GameStatus.pos_y_hero -= Hero.movementSpeed * delta * 0.15f;
+            GameStatus.pos_y_hero -= delta * 0.15f;
         }
         if (input.isKeyDown(Input.KEY_S) || input.isKeyDown(Input.KEY_DOWN)) {
             sprite.avatar = sprite.movingDown;
             sprite.avatar.update(delta);
-            GameStatus.pos_y_hero += Hero.movementSpeed * delta * 0.21f;
+            GameStatus.pos_y_hero += delta * 0.21f;
         }
         if (input.isKeyDown(Input.KEY_A) || input.isKeyDown(Input.KEY_LEFT)) {
             sprite.avatar = sprite.movingLeft;
             sprite.avatar.update(delta);
-            GameStatus.pos_x_hero -= Hero.movementSpeed * delta * 0.15f;
+            GameStatus.pos_x_hero -= delta * 0.15f;
         }
         if (input.isKeyDown(Input.KEY_D) || input.isKeyDown(Input.KEY_RIGHT)) {
             sprite.avatar = sprite.movingRight;
             sprite.avatar.update(delta);
-            GameStatus.pos_x_hero += Hero.movementSpeed * delta * 0.21f;
+            GameStatus.pos_x_hero += delta * 0.21f;
         }
     }
 }

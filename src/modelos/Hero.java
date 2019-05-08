@@ -1,26 +1,21 @@
 package modelos;
 
+import java.util.ArrayList;
 import org.newdawn.slick.SlickException;
+import personaje.Ataque;
 
 public class Hero {
 
     public String heroName;
+    private ArrayList<Ataque> ataques;
 
     public int heroLevel;
-    public int tempHeroExperience;
-    public int maxHeroExperience;
 
     public int tempHeroHealth;
     public int maxHeroHealth;
 
-    public int tempHeroMana;
-    public int maxHeroMana;
-
     public double heroAttack;
     public double heroDeffence;
-
-    public static double movementSpeed;
-    public static double attackSpeed;
 
     public int fuerza;
     public int resistencia;
@@ -31,15 +26,11 @@ public class Hero {
     public Hero() throws SlickException {
 
         heroName = "Hero";
+        ataques = new ArrayList<>();
         heroLevel = 1;
-        tempHeroExperience = 0;
-        maxHeroExperience = 100;
 
         tempHeroHealth = 10;
         maxHeroHealth = 10;
-
-        tempHeroMana = 10;
-        maxHeroMana = 10;
 
         heroAttack = 1.0;
         heroDeffence = 1.0;
@@ -48,22 +39,15 @@ public class Hero {
         resistencia = 1;
         magia = 1;
 
-        // sugested speed 1.3 
-        movementSpeed = 1.0;
-        attackSpeed = 1.0;
-
         levelPoints = 10;
     }
 
     public Hero(String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana,double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
         this.heroName = heroName;
+        ataques = new ArrayList<>();
         this.heroLevel = heroLevel;
-        this.tempHeroExperience = tempHeroExperience;
-        this.maxHeroExperience = maxHeroExperience;
         this.tempHeroHealth = tempHeroHealth;
         this.maxHeroHealth = maxHeroHealth;
-        this.tempHeroMana = tempHeroMana;
-        this.maxHeroMana = maxHeroMana;
         this.heroDeffence = heroDeffence;
         this.heroAttack = heroAttack;
         this.fuerza = strenght;
@@ -78,5 +62,12 @@ public class Hero {
             maxHeroExperience += Math.log(maxHeroExperience);
         }
         return maxHeroExperience;
+    }
+    public ArrayList<Ataque> getAtaques() {
+        return ataques;
+    }
+
+    public void setAtaques(ArrayList<Ataque> ataques) {
+        this.ataques = ataques;
     }
 }
