@@ -56,7 +56,6 @@ public class LoadEntity {
     public void updatePortalMapList(ArrayList<Portal> portalMapList) {
         Portal newPortal;
         String path = "res/portal/" + GameStatus.levelID + ".xml";
-        System.out.println(path);
         File filePath = new File(path);
         portalMapList.clear();
         try {

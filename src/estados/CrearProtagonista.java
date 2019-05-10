@@ -232,7 +232,7 @@ public class CrearProtagonista extends BasicGameState {
                 GameStatus.hero.getAtaques().add(ataque1);
                 GameStatus.hero.getAtaques().add(ataque2);
                 GameStatus.hero.getAtaques().add(ataque3);
-                sbg.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+                sbg.enterState(20, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
             }
         }
     }

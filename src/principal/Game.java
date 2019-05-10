@@ -14,8 +14,10 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 import estados.CrearProtagonista;
 import estados.Creditos;
+import estados.Intro;
 import estados.Menu;
 import estados.Opciones;
+import estados.Pause;
 import estados.Play;
 
 /**
@@ -39,7 +41,8 @@ public class Game extends StateBasedGame {
         this.addState(new Creditos());
         this.addState(new CrearProtagonista());
         this.addState(new Play());
-        this.addState(new estados.Pause());
+        this.addState(new Pause());
+        this.addState(new Intro());
     }
 
     @Override
