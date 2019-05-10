@@ -5,7 +5,7 @@ import modelos.Hero;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
 
-public class GameStatus extends principal.LoadEntity {
+public class GameStatus extends LoadEntity {
 
 
     public static boolean musicOn;
@@ -18,9 +18,6 @@ public class GameStatus extends principal.LoadEntity {
     public static int spriteNumber;
     public static Sprite sprite;
     public static Hero hero;
-
-
-    LoadEntity loadEntity;
     
     public ArrayList<modelos.Portal> portalMapList;
 
@@ -30,7 +27,7 @@ public class GameStatus extends principal.LoadEntity {
         levelID = 400;
         mapPath = "graphic/map/" + Integer.toString(levelID) + ".tmx";
         map = new TiledMap(mapPath);
-
+        
         spriteNumber = 1;
 
         sprite = new Sprite();

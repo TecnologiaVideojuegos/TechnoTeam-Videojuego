@@ -44,12 +44,15 @@ public class Play extends BasicGameState {
         event.update(container, sbg, delta, gameStatus, input, xPos, yPos);
 
         if (needToMapUpdate) {
+            
             updateGameStatus(container);
         }
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
+        Graphics gScreen = container.getGraphics();
+        gScreen.clear();
         try {
             gameStatus.map = new TiledMap("graphic/map/" + Integer.toString(GameStatus.levelID) + ".tmx");
             gameStatus.map.render(0, 0, 0);

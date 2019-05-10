@@ -1,25 +1,18 @@
 package modelos;
 public class Portal {
     
-    //x rozpoczecia portalu
     public int xStart;
     
-    //x zakończenia portalu
     public int xEnd;
     
-    //y rozpoczecia portalu
     public int yStart;
     
-    //y zakończenia portalu
     public int yEnd;
     
-    //level na którą zostaniemy przeniesieni
     public int levelID;
     
-    //x pozycja w którym znajdzie się postać po rzejściu na nowej mapie
     public int xNew;
     
-    //y pozycja w którym znajdzie się postać po rzejściu na nowej mapie
     public int yNew;
 
     public Portal() {

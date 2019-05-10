@@ -1,5 +1,6 @@
 package principal;
 
+import estados.Play;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,6 +58,7 @@ public class LoadEntity {
         String path = "res/portal/" + GameStatus.levelID + ".xml";
         System.out.println(path);
         File filePath = new File(path);
+        portalMapList.clear();
         try {
             XMLInputFactory iFactory = XMLInputFactory.newInstance();
             InputStream xmlFile = new FileInputStream(filePath);
@@ -94,7 +96,6 @@ public class LoadEntity {
 
                         if (parser.getLocalName().equals("Portal")) {
                             portalMapList.add(newPortal);
-                            System.out.println(newPortal);
                         }
                         break;
                 }
