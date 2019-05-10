@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <dane>
     <Portal>
         <xStart>1328</xStart>
         <xEnd>1344</xEnd>
-        <yStart>544</yStart>
+        <yStart>528</yStart>
 		<yEnd>608</yEnd>
 		<levelID>401</levelID>
-		<xNew>192</xNew>
-	    <yNew>155</yNew>
+		<xNew>40</xNew>
+	    <yNew>128</yNew>
     </Portal>
 </dane>

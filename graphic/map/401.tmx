@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="84" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
- <tileset firstgid="1" name="mapa pueblo grande" tilewidth="16" tileheight="16" tilecount="3780" columns="84">
-  <image source="../../Documentacion/Diseño grafico/Mapas/Primer mapa/mapa_pueblo_grande.png" width="1344" height="720"/>
+ <tileset firstgid="1" name="entrada grande" tilewidth="16" tileheight="16" tilecount="3780" columns="84">
+  <image source="../../Documentacion/Diseño grafico/Mapas/entrada/entrada_grande.png" width="1344" height="720"/>
  </tileset>
  <tileset firstgid="3781" name="coll" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="../../Documentacion/Diseño grafico/Mapas/Primer mapa/coll.png" width="16" height="16"/>
+  <image source="../../Documentacion/Diseño grafico/Mapas/entrada/coll.png" width="16" height="16"/>
  </tileset>
  <tileset firstgid="3782" name="portales" tilewidth="16" tileheight="16" tilecount="1" columns="1">
-  <image source="../../Documentacion/Diseño grafico/Mapas/Primer mapa/portales.png" width="16" height="16"/>
+  <image source="../../Documentacion/Diseño grafico/Mapas/entrada/portales.png" width="16" height="16"/>
  </tileset>
  <layer id="1" name="index" width="84" height="45">
   <data encoding="base64" compression="gzip">
@@ -16,12 +16,12 @@
  </layer>
  <layer id="2" name="coll" width="84" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAE+3VQQ6CMABFQU7g/S/EvVy5FvC1KTIv6c7AZ4yyv7Ztd/76HOnKtUbs+OX6PHny5Fm48eT5bdOseLY9xXPEPa7sKbfPrPzPK56H57HPj/gN8OTJ81w823i21c9Y3Idnex+e/aajn1tp95lNPNtNPNtNPNtNM/fy7DeV22fGs22U54zviOdzPO8YzzaebTzbeLbxbOPZtqLnZ5e6eLbxbOPZdlfPFd9H3u9jNt0xnm0823i2rezpdOcNXye+BRA7AAA=
+   H4sIAAAAAAAAE+3WUQqDMBAGYU/g/S/kvXwViZrAYHazM/A/lJagXy302LftcKE32uzrjb6709Pryp5f9//23OmpJ2XVE3FGNc+e9/Sc/3y2Pjv7/jN79p6XebTn6Jmz7z+6J3Fe5unZ75PBc5Wqe9LXntkiYnqy6cmmJ5uebHqyVf+/RKcnWyTPFb6TSJ4rpCebnmxXixEXPdv9+XxWMPf3zqYnm55serLpyaYnm55serLpyaYnm55sLRfnnHPO5d8Jo6eDFhA7AAA=
   </data>
  </layer>
  <layer id="3" name="portals" width="84" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAE+3aMQEAAAjDMBTgXxG6kMDBzkRC704XAAAAAAAAAAAAAMDbeJOj9MzSM0vPLD0BAG4LRgt5bhA7AAA=
+   H4sIAAAAAAAAE+3VMQ0AQAgEQRTgXxG6vnwBUBAyk5yBba4yAGCFyj/69ASA/fz1LD0BAAAAAAAAAAAA7nrXHkSTEDsAAA==
   </data>
  </layer>
 </map>
