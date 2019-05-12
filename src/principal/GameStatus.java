@@ -1,6 +1,7 @@
 package principal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import modelos.Hero;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;

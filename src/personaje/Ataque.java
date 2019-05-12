@@ -1,25 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package personaje;
 
+import org.newdawn.slick.Sound;
+
+/**
+ *
+ * @author Michael Lofer
+ */
 public class Ataque {
 
-    private int golpe, usos, probabilidadFallo, usosMax;
-    private String nombreGolpe, descripcionGolpe;
+    private int dmg, usos, probabilidadFallo, usosMax;
+    private String nombre, descripcion;
 
-    public Ataque(int golpe, int usos, String nombreGolpe, String descripcionGolpe, int probabilidadFallo) {
+    public Ataque(int dmg, int usos, String nombre, String descripcion, int probabilidadFallo) {
         this.usosMax = usos;
-        this.golpe = golpe;
+        this.dmg = dmg;
         this.usos = usos;
-        this.nombreGolpe = nombreGolpe;
-        this.descripcionGolpe = descripcionGolpe;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
         this.probabilidadFallo = probabilidadFallo;
     }
 
-    public String getNombreGolpe() {
-        return nombreGolpe;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreGolpe(String nombreGolpe) {
-        this.nombreGolpe = nombreGolpe;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getUsosMax() {
@@ -38,12 +49,12 @@ public class Ataque {
         this.probabilidadFallo = probabilidadFallo;
     }
 
-    public int getGolpe() {
-        return golpe;
+    public int getDmg() {
+        return dmg;
     }
 
-    public void setGolpe(int golpe) {
-        this.golpe = golpe;
+    public void setDmg(int dmg) {
+        this.dmg = dmg;
     }
 
     public int getUsos() {
@@ -54,12 +65,12 @@ public class Ataque {
         this.usos = usos;
     }
 
-    public String getDescripcionGolpe() {
-        return descripcionGolpe;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcionGolpe(String descripcionGolpe) {
-        this.descripcionGolpe = descripcionGolpe;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public boolean isAcertado() {  //devuelve si acierta el ataque o no
@@ -68,9 +79,19 @@ public class Ataque {
         for (int i = 0; i < 10; i++) {
             int valor = (int) (Math.floor(Math.random() * 2)); //suma 0 o 1
             contador += valor;
+            //System.out.println("Contador posibilidad -->"+contador);
         }
-        contador = contador * 10;
-        acertado = contador >= probabilidadFallo;
+        contador = contador * 10; //lo multiplica por 10 para compararlo con la probablidad de fallo
+        if (contador >= probabilidadFallo) { //si el contador es mayor que la probabilidad de fallo el ataque acierta
+            acertado = true;
+        } else {
+            acertado = false;
+        }
         return acertado;
+    }
+
+    @Override
+    public String toString() {
+        return "Ataque{" + "dmg=" + dmg + ", usos=" + usos + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
     }
 }
