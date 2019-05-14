@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
--<dane>
-	-<Portal>
+<dane>
+	<Portal>
 
 		<xStart>1328</xStart>
 
 		<xEnd>1344</xEnd>
 
-		<yStart>176</yStart>
+		<yStart>200</yStart>
 
-		<yEnd>80</yEnd>
+		<yEnd>708</yEnd>
 
 			<levelID>400</levelID>
 
-		<xNew>0</xNew>
+		<xNew>20</xNew>
 
-		<yNew>16</yNew>
+		<yNew>550</yNew>
 
 	</Portal>
 
