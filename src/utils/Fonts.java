@@ -16,7 +16,7 @@ public class Fonts {
     private static TrueTypeFont printMediumLogo;
 
     public Fonts() {
-        char tabc[] = {'ñ'};
+        char tabc[] = {'Ã±'};
         try {
             //Utworzenie czcionki
             font = Font.createFont(Font.TRUETYPE_FONT, new File("res/fonts/TrajanPro-Regular.otf"));
