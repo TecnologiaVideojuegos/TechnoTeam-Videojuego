@@ -12,7 +12,7 @@ public class Intro extends BasicGameState {
     public static final int ID = 20;
     private Image introimg;
     private float posy;
-    private final float vel = (float) 0.04;
+    private final float vel = (float) 0.015;
     private boolean movimiento;
     private int msFinal;
 
