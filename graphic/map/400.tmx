@@ -16,12 +16,12 @@
  </layer>
  <layer id="2" name="coll" width="84" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACu3VwQ2EMAwF0VRA/w2lL0oghLFlkxmJG4LPWy3Ma4zp8etjpZ1rRez4cn099dRTT8JNTz2fNmWlJ9spnhH32NlDbs+MfOcRz6Pn2vkR/wE99dTzXXqy6clGPyNxHz3Z++jJb1o9r9LuN5v0ZDfpyW7Sk92UuVdPfhO5PTM92aI8M34jPc/x7JiebHqy6cmmJ5uebFU9u1bR08zM9uv6zq74Per8DdSTTU82Pdn0ZKvs6cEdNxjz1nEQOwAA
+   H4sIAAAAAAAACu3V0Q2FIBAFUSqw/4boyxKEdVgXmUn8e9HreVH71Vr3+PUxUuRcK3a8Ob+eeuqpJ+Gmp55Pm7L62jOyL7Ipq1M8VzwDkT3k9szIdx5xP3qO/X7FM6CnnnrOpSebnmz0PRLX0ZO9jp78ptHfVdo9s0lPdpOe7CY92U2Ze/XkN5HbM9OTbZVnxn+k5zmeO6Ynm55serLpyaYnW1XPXavoaWZm8XZ9Z1f8Hu38DdSTTU82Pdn0ZKvs6cEdN2LLFqkQOwAA
   </data>
  </layer>
  <layer id="3" name="portals" width="84" height="45">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACu3aMREAIBDAMBTgX9Hr4lDA0o1EQufOXgAAAAAAAAAAAADwrfHTZm5LPTt6tvRs6dnSEgDg7QC5iRoAEDsAAA==
+   H4sIAAAAAAAACu3aMQ0AMAwDwSIIf0TB1blLuniK7iQT+NldBwAAHl3zAAAAAAAAAAA28YfI8S/J0jNLzyw9s7QEAPi7zfu1SxA7AAA=
   </data>
  </layer>
 </map>
