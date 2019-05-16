@@ -20,7 +20,6 @@ public class Play extends BasicGameState {
 
     private Event event;
 
-
     public Play() {
     }
 
@@ -45,28 +44,28 @@ public class Play extends BasicGameState {
         event.update(container, sbg, delta, gameStatus, input, xPos, yPos);
 
         if (needToMapUpdate) {
-            
+
             updateGameStatus(container);
+            System.out.println("PLAY: "+GameStatus.pos_x_hero+" "+ GameStatus.pos_y_hero);
         }
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
-        
+
         try {
             gameStatus.map = new TiledMap("graphic/map/" + Integer.toString(GameStatus.levelID) + ".tmx");
             gameStatus.map.render(0, 0, 0);
 
             gameStatus.updateEntityFieldList(gameStatus.map);
-            
-            
 
         } catch (SlickException e) {
             System.out.println("Error en updateGameStatus playState");
         }
-        Enemy e = GameStatus.enemys.get(GameStatus.levelID);
         GameStatus.sprite.avatar.draw(GameStatus.pos_x_hero, GameStatus.pos_y_hero);
-        e.getSprite().avatar.draw(e.getX_pos(), e.getY_pos());
+        if (GameStatus.enemys.get(GameStatus.levelID) != null) {
+            GameStatus.enemys.get(GameStatus.levelID).getSprite().avatar.draw(GameStatus.enemys.get(GameStatus.levelID).getX_pos(), GameStatus.enemys.get(GameStatus.levelID).getY_pos());
+        }
 
     }
 

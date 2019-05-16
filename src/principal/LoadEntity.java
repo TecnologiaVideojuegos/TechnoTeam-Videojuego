@@ -29,10 +29,10 @@ public class LoadEntity {
     public void updateEntityFieldList(TiledMap map) {
         exist = new boolean[map.getWidth()][map.getHeight()];
         testField = map.getTileId(0, 0, 1);
-        for(int i=0; i< exist.length; i++){
-            for(int j=0; j< exist[i].length; j++){
+        for (int i = 0; i < exist.length; i++) {
+            for (int j = 0; j < exist[i].length; j++) {
                 collisionTileID = map.getTileId(i, j, 1);
-                if(collisionTileID==testField){
+                if (collisionTileID == testField) {
                     exist[i][j] = true;
                 }
             }
@@ -42,8 +42,13 @@ public class LoadEntity {
 
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
-        recField = new Rectangle(GameStatus.enemys.get(GameStatus.levelID).getX_pos(), GameStatus.enemys.get(GameStatus.levelID).getY_pos()-16, 32, 64);
-        collisions.add(recField);
+        if (GameStatus.enemys.get(GameStatus.levelID) != null) {
+            int x_enemy = GameStatus.enemys.get(GameStatus.levelID).getX_pos();
+            int y_enemy = GameStatus.enemys.get(GameStatus.levelID).getY_pos();
+
+            recField = new Rectangle(x_enemy, y_enemy - 16, 32, 64);
+            collisions.add(recField);
+        }
         for (int i = 0; i < exist.length; i++) {
             for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {

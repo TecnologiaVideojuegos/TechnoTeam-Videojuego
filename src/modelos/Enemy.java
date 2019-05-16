@@ -5,8 +5,8 @@ import principal.SpriteGeneral;
 public class Enemy {
     private String enemyName;
     private int IdLevel;
-    private int x_pos;
-    private int y_pos;
+    private int x_pos = 0;
+    private int y_pos = 0;
     private String source;
     private SpriteGeneral sprite;
  
