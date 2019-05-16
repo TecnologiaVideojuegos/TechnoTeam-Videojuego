@@ -10,6 +10,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.tiled.TiledMap;
+import modelos.Enemy;
 
 public class Play extends BasicGameState {
 
@@ -51,18 +52,21 @@ public class Play extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
-        Graphics gScreen = container.getGraphics();
-        gScreen.clear();
+        
         try {
             gameStatus.map = new TiledMap("graphic/map/" + Integer.toString(GameStatus.levelID) + ".tmx");
             gameStatus.map.render(0, 0, 0);
 
             gameStatus.updateEntityFieldList(gameStatus.map);
+            
+            
 
         } catch (SlickException e) {
             System.out.println("Error en updateGameStatus playState");
         }
+        Enemy e = GameStatus.enemys.get(GameStatus.levelID);
         GameStatus.sprite.avatar.draw(GameStatus.pos_x_hero, GameStatus.pos_y_hero);
+        e.getSprite().avatar.draw(e.getX_pos(), e.getY_pos());
 
     }
 

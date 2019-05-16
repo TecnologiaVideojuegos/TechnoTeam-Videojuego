@@ -42,6 +42,8 @@ public class LoadEntity {
 
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
+        recField = new Rectangle(GameStatus.enemys.get(GameStatus.levelID).getX_pos(), GameStatus.enemys.get(GameStatus.levelID).getY_pos()-16, 32, 64);
+        collisions.add(recField);
         for (int i = 0; i < exist.length; i++) {
             for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {

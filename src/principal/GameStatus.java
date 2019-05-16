@@ -2,9 +2,11 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import modelos.Enemy;
 import modelos.Hero;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
+import utils.EnemyData;
 
 public class GameStatus extends LoadEntity {
 
@@ -21,6 +23,7 @@ public class GameStatus extends LoadEntity {
     public static Hero hero;
     
     public ArrayList<modelos.Portal> portalMapList;
+    public static HashMap<Integer, Enemy> enemys;
 
     public GameStatus() throws SlickException {
         musicOn = true;
@@ -39,6 +42,7 @@ public class GameStatus extends LoadEntity {
         hero = new Hero();
         
         this.portalMapList = new ArrayList<>();
+        enemys = EnemyData.enemyData();
 
         updateEntityFieldList(map);
         updatePortalMapList(portalMapList);
