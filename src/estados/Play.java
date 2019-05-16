@@ -46,7 +46,6 @@ public class Play extends BasicGameState {
         if (needToMapUpdate) {
 
             updateGameStatus(container);
-            System.out.println("PLAY: "+GameStatus.pos_x_hero+" "+ GameStatus.pos_y_hero);
         }
     }
 
