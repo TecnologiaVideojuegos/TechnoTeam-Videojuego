@@ -22,7 +22,7 @@ public class ScreenClass {
             double mouseX = MouseInfo.getPointerInfo().getLocation().getX() - bWspX;
             double mouseY = MouseInfo.getPointerInfo().getLocation().getY() - bWspY;
 
-            Rectangle GAMEscreenRect = new Rectangle((int) mouseX, (int) mouseY, 1280, 720);
+            Rectangle GAMEscreenRect = new Rectangle((int) mouseX, (int) mouseY, 1344, 720);
 
             BufferedImage capture = new Robot().createScreenCapture(GAMEscreenRect);
 
@@ -32,7 +32,7 @@ public class ScreenClass {
             }
 
             BufferedImageOp op = new ConvolveOp(new Kernel(20, 20, matrix), ConvolveOp.EDGE_NO_OP, null);
-            BufferedImage capture1 = new BufferedImage(1280, 720, BufferedImage.TYPE_INT_RGB);
+            BufferedImage capture1 = new BufferedImage(1344, 720, BufferedImage.TYPE_INT_RGB);
             nrScreena++;
             ImageIO.write(op.filter(capture, capture1), "png", new File("graphic/menu/skrin" + nrScreena + ".png"));
             if (nrScreena > 2) {
