@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="12" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="grass" tilewidth="64" tileheight="64">
+  <image source="../images/grass.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="2" name="dirt" tilewidth="64" tileheight="64">
+  <image source="../images/dirt.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="3" name="water" tilewidth="64" tileheight="64">
+  <image source="../images/water.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="4" name="water2" tilewidth="64" tileheight="64">
+  <image source="../images/water2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="5" name="rock" tilewidth="64" tileheight="64">
+  <image source="../images/rock.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="6" name="grass2" tilewidth="64" tileheight="64">
+  <image source="../images/grass2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="7" name="grass3" tilewidth="64" tileheight="64">
+  <image source="../images/grass3.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="8" name="grass4" tilewidth="64" tileheight="64">
+  <image source="../images/grass4.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="grass5" tilewidth="64" tileheight="64">
+  <image source="../images/grass5.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="10" name="dirt2" tilewidth="64" tileheight="64">
+  <image source="../images/dirt2.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="11" name="dirt3" tilewidth="64" tileheight="64">
+  <image source="../images/dirt3.png" width="64" height="64"/>
+ </tileset>
+ <tileset firstgid="12" name="grass6" tilewidth="64" tileheight="64">
+  <image source="../images/grass6.png" width="64" height="64"/>
+ </tileset>
+ <layer name="Calque de Tile 1" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC32R0QrAIAhFy1lrW///vVNQuFyqhwOhR1GTUooY0xhGDS5CI+7uZ3Rwa+TR99gdPnoNapV87pmxucntXPQ7vBv1kQDzDzkd3LbYJ5nQSw6eABo34t0G9UxXYZ/VPXJGvCvfg+fQg581/t/vwnV+DwcVUUACAAA=
+  </data>
+ </layer>
+</map>
