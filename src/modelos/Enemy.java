@@ -9,16 +9,26 @@ public class Enemy {
     private int y_pos = 0;
     private String source;
     private SpriteGeneral sprite;
+    private boolean vivo = true;
  
     public Enemy() {}
 
-    public Enemy(String enemyName, int IdLevel, SpriteGeneral sprite, int x_pos, int y_pos, String source) {
+    public Enemy(String enemyName,boolean vivo,  int IdLevel, SpriteGeneral sprite, int x_pos, int y_pos, String source) {
         this.enemyName = enemyName;
         this.IdLevel=IdLevel;
         this.sprite = sprite;
         this.x_pos=x_pos;
         this.y_pos=y_pos;
         this.source = source;
+        this.vivo = vivo;
+    }
+
+    public boolean isVivo() {
+        return vivo;
+    }
+
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
     }
 
     public void setEnemyName(String enemyName) {

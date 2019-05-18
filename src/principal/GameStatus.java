@@ -19,7 +19,7 @@ public class GameStatus extends LoadEntity {
     public static int pos_x_hero, pos_y_hero;
 
     public static int spriteNumber;
-    public static Sprite sprite;
+    public static SpriteHero sprite;
     public static Hero hero;
     
     public ArrayList<modelos.Portal> portalMapList;
@@ -34,7 +34,7 @@ public class GameStatus extends LoadEntity {
         
         spriteNumber = 1;
 
-        sprite = new Sprite();
+        sprite = new SpriteHero();
 
         pos_x_hero = 500;
         pos_y_hero = 520;

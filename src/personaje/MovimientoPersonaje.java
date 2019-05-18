@@ -1,17 +1,17 @@
 package personaje;
 
 import principal.GameStatus;
-import principal.Sprite;
+import principal.SpriteHero;
 import modelos.Hero;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-public class MovimientoPersonaje extends Sprite {
+public class MovimientoPersonaje extends SpriteHero {
 
     public MovimientoPersonaje() throws SlickException {
     }
 
-    public void go(Input input, GameStatus gs, int delta, Sprite sprite) {
+    public void go(Input input, GameStatus gs, int delta, SpriteHero sprite) {
 
         if (input.isKeyDown(Input.KEY_W) || input.isKeyDown(Input.KEY_UP)) {
             sprite.avatar = sprite.movingUp;

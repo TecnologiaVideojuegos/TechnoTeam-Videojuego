@@ -5,7 +5,7 @@ import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
-public class Sprite {
+public class SpriteHero {
 
 
     public Image imgSprite;
@@ -16,7 +16,7 @@ public class Sprite {
     public int[] duration = {durationScalar, durationScalar, durationScalar};
     public Animation avatar, movingUp, movingDown, movingLeft, movingRight;
 
-    public Sprite() throws SlickException {
+    public SpriteHero() throws SlickException {
 
         imgSprite = new Image("graphic/heroSprite/avatars" + GameStatus.spriteNumber + ".png");
 

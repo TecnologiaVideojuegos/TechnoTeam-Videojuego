@@ -1,6 +1,6 @@
 package personaje;
 
-import principal.Sprite;
+import principal.SpriteHero;
 import principal.GameStatus;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
@@ -14,7 +14,7 @@ public class Event {
     private Colisiones collisionFields;
     private Portales portals;
 
-    public Event(Sprite sprite) throws SlickException {
+    public Event(SpriteHero sprite) throws SlickException {
         this.movement = new MovimientoPersonaje();
         this.collisionFields = new Colisiones();
         this.portals = new Portales();

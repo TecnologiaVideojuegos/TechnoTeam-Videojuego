@@ -11,7 +11,13 @@ public class EnemyData {
         HashMap<Integer, Enemy> enemyData = new HashMap<Integer, Enemy>() {
             {
                 //400 Orc
-                put(400, new Enemy("Orc", 400, new SpriteGeneral(400, 1), 1296, 560, "graphic/heroSprite/avatar2.png"));
+                put(400, new Enemy("Orc",true, 400, new SpriteGeneral(400, 1), 1296, 560, "graphic/enemySprite/avatar400.png"));
+                //400 Orc
+                put(401, new Enemy("Orc",true, 401, new SpriteGeneral(401, 0), 1184, 224, "graphic/enemySprite/avatar401.png"));
+                //400 Orc
+                put(404, new Enemy("Orc",true, 404, new SpriteGeneral(404, 2), 528, 576, "graphic/enemySprite/avatar404.png"));
+                //400 Orc
+                put(403, new Enemy("Orc",true, 403, new SpriteGeneral(403, 0), 640, 384, "graphic/enemySprite/avatar403.png"));
             }
         };
         return enemyData;

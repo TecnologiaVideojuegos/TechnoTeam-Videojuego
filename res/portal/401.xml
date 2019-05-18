@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <dane>
     <Portal>
         <xStart>16</xStart>
@@ -6,8 +6,8 @@
         <yStart>80</yStart>
 		<yEnd>112</yEnd>
 		<levelID>400</levelID>
-		<xNew>1312</xNew>
-	    <yNew>550</yNew>
+		<xNew>1296</xNew>
+	    <yNew>528</yNew>
     </Portal>
     <Portal>
         <xStart>1168</xStart>

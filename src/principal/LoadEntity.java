@@ -46,7 +46,7 @@ public class LoadEntity {
             int x_enemy = GameStatus.enemys.get(GameStatus.levelID).getX_pos();
             int y_enemy = GameStatus.enemys.get(GameStatus.levelID).getY_pos();
 
-            recField = new Rectangle(x_enemy, y_enemy - 16, 32, 64);
+            recField = new Rectangle(x_enemy, y_enemy, 32, 32);
             collisions.add(recField);
         }
         for (int i = 0; i < exist.length; i++) {

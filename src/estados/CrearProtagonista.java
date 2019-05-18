@@ -1,7 +1,7 @@
 package estados;
 
 import principal.GameStatus;
-import principal.Sprite;
+import principal.SpriteHero;
 import utils.Fonts;
 import modelos.Hero;
 import org.lwjgl.input.Mouse;
@@ -218,7 +218,7 @@ public class CrearProtagonista extends BasicGameState {
             if (input.isMousePressed(0) && !avatarName.equalsIgnoreCase("")) {
                 Play.gameStatus = new GameStatus();
                 GameStatus.spriteNumber = (actualImage + 1);
-                GameStatus.sprite = new Sprite();
+                GameStatus.sprite = new SpriteHero();
                 GameStatus.hero.heroName = avatarName;
                 if(actualImage==0){
                     ataque1 = new Ataque(35, 30, "Pianazo1", "Lanzará un piano para causar un daño leve", 10);
