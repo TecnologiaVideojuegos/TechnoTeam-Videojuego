@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.newdawn.slick.SlickException;
 import personaje.Ataque;
 
-public class Hero {
-
-    public String heroName;
+public class Heroe {
+    private int idHero;
+    private String heroName;
     private ArrayList<Ataque> ataques;
 
     public int heroLevel;
@@ -23,8 +23,7 @@ public class Hero {
 
     public int levelPoints;
 
-    public Hero() throws SlickException {
-
+    public Heroe() throws SlickException {
         heroName = "Hero";
         ataques = new ArrayList<>();
         heroLevel = 1;
@@ -42,7 +41,7 @@ public class Hero {
         levelPoints = 10;
     }
 
-    public Hero(String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana,double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
+    public Heroe(int idHero, String heroName, int heroLevel, int tempHeroExperience, int maxHeroExperience, int tempHeroHealth, int maxHeroHealth, int tempHeroMana, int maxHeroMana,double heroAttack, double heroDeffence, int strenght, int agility, int inteligence, int levelPoints) {
         this.heroName = heroName;
         ataques = new ArrayList<>();
         this.heroLevel = heroLevel;
@@ -54,6 +53,7 @@ public class Hero {
         this.resistencia = agility;
         this.magia = inteligence;
         this.levelPoints = levelPoints;
+        this.idHero = idHero;
     }
 
     public static int getMaxHeroExp(int lvl) {
@@ -69,5 +69,21 @@ public class Hero {
 
     public void setAtaques(ArrayList<Ataque> ataques) {
         this.ataques = ataques;
+    }
+
+    public int getIdHero() {
+        return idHero;
+    }
+
+    public void setIdHero(int idHero) {
+        this.idHero = idHero;
+    }
+
+    public String getHeroName() {
+        return heroName;
+    }
+
+    public void setHeroName(String heroName) {
+        this.heroName = heroName;
     }
 }

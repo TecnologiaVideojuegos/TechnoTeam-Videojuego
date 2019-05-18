@@ -1,6 +1,6 @@
 package estados;
 
-import utils.Fonts;
+import utils.Fuente;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -14,7 +14,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class Menu extends BasicGameState {
+public class Estado_0_MENU extends BasicGameState {
 
     Image fondo;
     Image buttonBB;
@@ -25,7 +25,7 @@ public class Menu extends BasicGameState {
 
     private String pos_mouse = "";
 
-    public Menu() {
+    public Estado_0_MENU() {
     }
 
     @Override
@@ -95,11 +95,11 @@ public class Menu extends BasicGameState {
             g.drawImage(buttonBB, bx, by += 85);
         }
 
-        Fonts.print78().drawString(450, 100, "TYRFING", Color.white);
-        Fonts.print25().drawString(570, 260, "JUGAR", colorOpcionSelecionada[0]);
-        Fonts.print25().drawString(570, 345, "OPCIONES", colorOpcionSelecionada[1]);
-        Fonts.print25().drawString(570, 430, "CREDITOS", colorOpcionSelecionada[2]);
-        Fonts.print25().drawString(570, 515, "EXIT", colorOpcionSelecionada[3]);
+        Fuente.print78().drawString(450, 100, "TYRFING", Color.white);
+        Fuente.print25().drawString(570, 260, "JUGAR", colorOpcionSelecionada[0]);
+        Fuente.print25().drawString(570, 345, "OPCIONES", colorOpcionSelecionada[1]);
+        Fuente.print25().drawString(570, 430, "CREDITOS", colorOpcionSelecionada[2]);
+        Fuente.print25().drawString(570, 515, "EXIT", colorOpcionSelecionada[3]);
 
         g.drawString(pos_mouse, 10, 10);
     }

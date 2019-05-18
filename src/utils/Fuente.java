@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import org.newdawn.slick.TrueTypeFont;
 
-public class Fonts {
+public class Fuente {
 
     public Font font;
     private static TrueTypeFont printHead;
@@ -15,7 +15,7 @@ public class Fonts {
     private static TrueTypeFont printBigLogo;
     private static TrueTypeFont printMediumLogo;
 
-    public Fonts() {
+    public Fuente() {
         char tabc[] = {'ñ'};
         try {
             //Utworzenie czcionki

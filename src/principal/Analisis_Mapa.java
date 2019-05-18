@@ -1,6 +1,6 @@
 package principal;
 
-import estados.Play;
+import estados.Estado_1_PLAY;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,9 +15,9 @@ import modelos.Portal;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
-public class LoadEntity {
+public class Analisis_Mapa {
 
-    int collisionID;
+    int collisionID, tam_x_enemy, tam_y_enemy;
     public int collisionTileID;
     public int testField, testPortal;
     boolean[][] exist;
@@ -42,11 +42,16 @@ public class LoadEntity {
 
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
-        if (GameStatus.enemys.get(GameStatus.levelID) != null) {
-            int x_enemy = GameStatus.enemys.get(GameStatus.levelID).getX_pos();
-            int y_enemy = GameStatus.enemys.get(GameStatus.levelID).getY_pos();
-
-            recField = new Rectangle(x_enemy, y_enemy, 32, 32);
+        if (Estado_Juego.enemys.get(Estado_Juego.levelID) != null) {
+            
+            if(Estado_Juego.levelID==402){
+                tam_x_enemy = 48;
+                tam_y_enemy = 64;
+            }
+            else{
+                tam_x_enemy = 32;
+                tam_y_enemy = 32;}
+            recField = new Rectangle(Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos(), Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos(), tam_x_enemy, tam_y_enemy);
             collisions.add(recField);
         }
         for (int i = 0; i < exist.length; i++) {
@@ -62,7 +67,7 @@ public class LoadEntity {
 
     public void updatePortalMapList(ArrayList<Portal> portalMapList) {
         Portal newPortal;
-        String path = "res/portal/" + GameStatus.levelID + ".xml";
+        String path = "res/portal/" + Estado_Juego.levelID + ".xml";
         File filePath = new File(path);
         portalMapList.clear();
         try {

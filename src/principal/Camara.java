@@ -4,7 +4,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.tiled.TiledMap;
 
-public class Camera {
+public class Camara {
 
     public TiledMap map;
 
@@ -26,7 +26,7 @@ public class Camera {
 
     protected float cameraY;
 
-    public Camera(GameContainer gc, TiledMap map) {
+    public Camara(GameContainer gc, TiledMap map) {
         this.map = map;
 
         this.numTilesX = map.getWidth();

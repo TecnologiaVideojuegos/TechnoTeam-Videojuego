@@ -1,11 +1,11 @@
 package principal;
 
-import modelos.Hero;
+import modelos.Heroe;
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
-public class SpriteHero {
+public class SpriteHeroe {
 
 
     public Image imgSprite;
@@ -16,9 +16,9 @@ public class SpriteHero {
     public int[] duration = {durationScalar, durationScalar, durationScalar};
     public Animation avatar, movingUp, movingDown, movingLeft, movingRight;
 
-    public SpriteHero() throws SlickException {
+    public SpriteHeroe() throws SlickException {
 
-        imgSprite = new Image("graphic/heroSprite/avatars" + GameStatus.spriteNumber + ".png");
+        imgSprite = new Image("graphic/heroSprite/avatars" + Estado_Juego.spriteNumber + ".png");
 
         int widthSubImageLength = 3;
 

@@ -1,20 +1,20 @@
 package personaje;
 
-import principal.GameStatus;
-import principal.LoadEntity;
+import principal.Estado_Juego;
+import principal.Analisis_Mapa;
 
 public class Colisiones {
 
     public Colisiones() {
     }
 
-    public void isCollision(GameStatus gs, int oldX, int oldY) {
+    public void isCollision(Estado_Juego gs, int oldX, int oldY) {
         int iter = 0;
 
-        while (LoadEntity.collisions.size() > iter) {
-            if (LoadEntity.recPlayer.intersects(LoadEntity.collisions.get(iter))) {
-                GameStatus.pos_x_hero = oldX;
-                GameStatus.pos_y_hero = oldY;
+        while (Analisis_Mapa.collisions.size() > iter) {
+            if (Analisis_Mapa.recPlayer.intersects(Analisis_Mapa.collisions.get(iter))) {
+                Estado_Juego.pos_x_hero = oldX;
+                Estado_Juego.pos_y_hero = oldY;
             }
             iter++;
         }

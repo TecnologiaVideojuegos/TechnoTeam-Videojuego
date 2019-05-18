@@ -1,6 +1,6 @@
 package estados;
 
-import utils.Fonts;
+import utils.Fuente;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -13,15 +13,15 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class Opciones extends BasicGameState {
+public class Estado_2_OPCIONES extends BasicGameState {
 
     Color colorTexto = Color.white;
     Color opcionSeleccionada = Color.orange;
     Color ctab[] = {colorTexto, colorTexto, colorTexto, colorTexto, colorTexto};
 
-    Fonts font2;
+    Fuente font2;
 
-    public Opciones() {
+    public Estado_2_OPCIONES() {
     }
 
     @Override
@@ -31,7 +31,7 @@ public class Opciones extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
-        font2 = new Fonts();
+        font2 = new Fuente();
     }
 
     @Override
@@ -47,12 +47,12 @@ public class Opciones extends BasicGameState {
             g.drawImage(buttonBB, bx, by += 85);
         }
 
-        Fonts.print78().drawString(440, 100, "Opciones", colorTexto);
-        Fonts.print25().drawString(565, 260, "Opción 1", ctab[0]);
-        Fonts.print25().drawString(565, 345, "Opción 2", ctab[1]);
-        Fonts.print25().drawString(565, 430, "Opción 3", ctab[2]);
-        Fonts.print25().drawString(565, 515, "Opción 4", ctab[3]);
-        Fonts.print25().drawString(565, 600, "Volver", ctab[4]);
+        Fuente.print78().drawString(440, 100, "Opciones", colorTexto);
+        Fuente.print25().drawString(565, 260, "Opción 1", ctab[0]);
+        Fuente.print25().drawString(565, 345, "Opción 2", ctab[1]);
+        Fuente.print25().drawString(565, 430, "Opción 3", ctab[2]);
+        Fuente.print25().drawString(565, 515, "Opción 4", ctab[3]);
+        Fuente.print25().drawString(565, 600, "Volver", ctab[4]);
     }
 
     @Override

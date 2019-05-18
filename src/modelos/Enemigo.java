@@ -2,33 +2,23 @@ package modelos;
 
 import principal.SpriteGeneral;
 
-public class Enemy {
+public class Enemigo {
     private String enemyName;
     private int IdLevel;
-    private int x_pos = 0;
-    private int y_pos = 0;
+    private int x_pos;
+    private int y_pos;
     private String source;
     private SpriteGeneral sprite;
-    private boolean vivo = true;
  
-    public Enemy() {}
+    public Enemigo() {}
 
-    public Enemy(String enemyName,boolean vivo,  int IdLevel, SpriteGeneral sprite, int x_pos, int y_pos, String source) {
+    public Enemigo(String enemyName, int IdLevel, SpriteGeneral sprite, int x_pos, int y_pos, String source) {
         this.enemyName = enemyName;
         this.IdLevel=IdLevel;
         this.sprite = sprite;
         this.x_pos=x_pos;
         this.y_pos=y_pos;
         this.source = source;
-        this.vivo = vivo;
-    }
-
-    public boolean isVivo() {
-        return vivo;
-    }
-
-    public void setVivo(boolean vivo) {
-        this.vivo = vivo;
     }
 
     public void setEnemyName(String enemyName) {

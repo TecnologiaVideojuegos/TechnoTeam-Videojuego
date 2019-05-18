@@ -1,6 +1,6 @@
 package estados;
 
-import utils.Fonts;
+import utils.Fuente;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -13,7 +13,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class Creditos extends BasicGameState{
+public class Estado_8_CREDITOS extends BasicGameState{
 
     Image fondo;
     Image back;
@@ -23,7 +23,7 @@ public class Creditos extends BasicGameState{
     Color colorOpcionSelecionada[] = {colorTexto};
    
 
-    public Creditos() {
+    public Estado_8_CREDITOS() {
     }
 
     @Override
@@ -74,22 +74,22 @@ public class Creditos extends BasicGameState{
         //boton back
         g.drawImage(back, 493, 600);
 
-        Fonts.print46().drawString(450, 100, "A U T O R E S", Color.white);
+        Fuente.print46().drawString(450, 100, "A U T O R E S", Color.white);
 
-        Fonts.print25().drawString(250, 200, "Ricardo zambrana Zúñiga", Color.white);
-        Fonts.print25().drawString(750, 200, "Técnico Sonido", Color.white);
-        Fonts.print25().drawString(250, 250, "Miguel Herraez Sachez", Color.white);
-        Fonts.print25().drawString(750, 250, "Diseño grafico", Color.white);
-        Fonts.print25().drawString(250, 300, "Guzmán Bernaldo de Quirós", Color.white);
-        Fonts.print25().drawString(750, 300, "Desarrollo Web", Color.white);
-        Fonts.print25().drawString(250, 350, "Álvaro Alcaide Muñoz de Rivera", Color.white);
-        Fonts.print25().drawString(750, 350, "Programador", Color.white);
-        Fonts.print25().drawString(250, 400, "José Andrés Gómez Suárez", Color.white);
-        Fonts.print25().drawString(750, 400, "Jefe Proyecto", Color.white);
+        Fuente.print25().drawString(250, 200, "Ricardo zambrana Zúñiga", Color.white);
+        Fuente.print25().drawString(750, 200, "Técnico Sonido", Color.white);
+        Fuente.print25().drawString(250, 250, "Miguel Herraez Sachez", Color.white);
+        Fuente.print25().drawString(750, 250, "Diseño grafico", Color.white);
+        Fuente.print25().drawString(250, 300, "Guzmán Bernaldo de Quirós", Color.white);
+        Fuente.print25().drawString(750, 300, "Desarrollo Web", Color.white);
+        Fuente.print25().drawString(250, 350, "Álvaro Alcaide Muñoz de Rivera", Color.white);
+        Fuente.print25().drawString(750, 350, "Programador", Color.white);
+        Fuente.print25().drawString(250, 400, "José Andrés Gómez Suárez", Color.white);
+        Fuente.print25().drawString(750, 400, "Jefe Proyecto", Color.white);
 
-        Fonts.print18().drawString(350, 545, "'Nunca hay que subestimar el poder de la imaginación'", Color.white);
+        Fuente.print18().drawString(350, 545, "'Nunca hay que subestimar el poder de la imaginación'", Color.white);
 
-        Fonts.print25().drawString(580, 625, "VOLVER", colorOpcionSelecionada[0]);
+        Fuente.print25().drawString(580, 625, "VOLVER", colorOpcionSelecionada[0]);
         
         g.drawString(pos_mouse, 10, 10);
     }

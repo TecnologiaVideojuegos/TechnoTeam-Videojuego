@@ -7,7 +7,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class Intro extends BasicGameState {
+public class Estado_20_INTRODUCCION extends BasicGameState {
 
     public static final int ID = 20;
     private Image introimg;

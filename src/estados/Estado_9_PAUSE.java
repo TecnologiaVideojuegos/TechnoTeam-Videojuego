@@ -1,7 +1,7 @@
 package estados;
 
-import principal.GameStatus;
-import utils.Fonts;
+import principal.Estado_Juego;
+import utils.Fuente;
 import org.lwjgl.input.Mouse;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -12,7 +12,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Pause extends BasicGameState {
+public class Estado_9_PAUSE extends BasicGameState {
 
     private String actualScr;
 
@@ -24,7 +24,7 @@ public class Pause extends BasicGameState {
 
     private final Color colorTextos[] = {colorTexto, colorTexto, colorTexto, colorTexto};
 
-    public Pause() {
+    public Estado_9_PAUSE() {
     }
 
     @Override
@@ -95,7 +95,7 @@ public class Pause extends BasicGameState {
                 if (actualSubWindow == 0) {
                     System.exit(0);
                 } else {
-                    principal.GameStatus.musicOn = !principal.GameStatus.musicOn;
+                    principal.Estado_Juego.musicOn = !principal.Estado_Juego.musicOn;
                 }
             }
         }
@@ -118,10 +118,10 @@ public class Pause extends BasicGameState {
         Image menuW = new Image("graphic/menu/PauseState.png");
         g.drawImage(menuW, 0, 0);
 
-        Fonts.print18().drawString(607, 142, "Pausa");
+        Fuente.print18().drawString(607, 142, "Pausa");
 
-        Fonts.print18().drawString(515, 187, "JUEGO", colorSubOpciones[0]);
-        Fonts.print18().drawString(684, 187, "OPCIONES", colorSubOpciones[1]);
+        Fuente.print18().drawString(515, 187, "JUEGO", colorSubOpciones[0]);
+        Fuente.print18().drawString(684, 187, "OPCIONES", colorSubOpciones[1]);
 
         Image buttonMS = new Image("graphic/menu/buttonMSPause.png");
 
@@ -132,22 +132,22 @@ public class Pause extends BasicGameState {
             for (int i = 0; i < 3; i++) {
                 g.drawImage(buttonMS, bx, by += 65);
             }
-            Fonts.print18().drawString(590, 256, "REANUDAR", colorTextos[0]);
-            Fonts.print18().drawString(590, 321, "MENÚ", colorTextos[1]);
-            Fonts.print18().drawString(590, 384, "SALIR", colorTextos[2]);
+            Fuente.print18().drawString(590, 256, "REANUDAR", colorTextos[0]);
+            Fuente.print18().drawString(590, 321, "MENÚ", colorTextos[1]);
+            Fuente.print18().drawString(590, 384, "SALIR", colorTextos[2]);
         }
         if (actualSubWindow == 1) {
             for (int i = 0; i < 4; i++) {
                 g.drawImage(buttonMS, bx, by += 65);
             }
-            Fonts.print18().drawString(590, 257, "Opción 1", colorTextos[0]);
-            Fonts.print18().drawString(590, 319, "Opción 2", colorTextos[1]);
-            if (GameStatus.musicOn) {
-                Fonts.print18().drawString(590, 384, "MUSIC OFF", colorTextos[2]);
+            Fuente.print18().drawString(590, 257, "Opción 1", colorTextos[0]);
+            Fuente.print18().drawString(590, 319, "Opción 2", colorTextos[1]);
+            if (Estado_Juego.musicOn) {
+                Fuente.print18().drawString(590, 384, "MUSIC OFF", colorTextos[2]);
             } else {
-                Fonts.print18().drawString(590, 389, "MUSIC ON", colorTextos[2]);
+                Fuente.print18().drawString(590, 389, "MUSIC ON", colorTextos[2]);
             }
-            Fonts.print18().drawString(590, 449, "RENUDAR", colorTextos[3]);
+            Fuente.print18().drawString(590, 449, "RENUDAR", colorTextos[3]);
         }
     }
 }

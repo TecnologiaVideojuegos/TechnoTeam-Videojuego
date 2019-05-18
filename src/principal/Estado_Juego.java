@@ -2,13 +2,15 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import modelos.Enemy;
-import modelos.Hero;
+import modelos.Enemigo;
+import modelos.Frase;
+import modelos.Heroe;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.tiled.TiledMap;
-import utils.EnemyData;
+import utils.BBDD_Dialogo;
+import utils.BBDD_Enemigos;
 
-public class GameStatus extends LoadEntity {
+public class Estado_Juego extends Analisis_Mapa {
 
 
     public static boolean musicOn;
@@ -19,13 +21,14 @@ public class GameStatus extends LoadEntity {
     public static int pos_x_hero, pos_y_hero;
 
     public static int spriteNumber;
-    public static SpriteHero sprite;
-    public static Hero hero;
+    public static SpriteHeroe sprite;
+    public static Heroe hero;
     
     public ArrayList<modelos.Portal> portalMapList;
-    public static HashMap<Integer, Enemy> enemys;
+    public static HashMap<Integer, Enemigo> enemys;
+    public static HashMap<Integer, Frase> dialogo;
 
-    public GameStatus() throws SlickException {
+    public Estado_Juego() throws SlickException {
         musicOn = true;
 
         levelID = 400;
@@ -34,15 +37,17 @@ public class GameStatus extends LoadEntity {
         
         spriteNumber = 1;
 
-        sprite = new SpriteHero();
+        sprite = new SpriteHeroe();
 
         pos_x_hero = 500;
         pos_y_hero = 520;
-
-        hero = new Hero();
         
         this.portalMapList = new ArrayList<>();
-        enemys = EnemyData.enemyData();
+        enemys = BBDD_Enemigos.enemyData();
+        if(hero!=null){
+            dialogo = BBDD_Dialogo.dialogoData();
+        }
+        
 
         updateEntityFieldList(map);
         updatePortalMapList(portalMapList);

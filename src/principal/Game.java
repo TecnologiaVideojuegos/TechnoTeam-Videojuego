@@ -12,13 +12,13 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
-import estados.CrearProtagonista;
-import estados.Creditos;
-import estados.Intro;
-import estados.Menu;
-import estados.Opciones;
-import estados.Pause;
-import estados.Play;
+import estados.Estado_14_CREAR_PROTEGONISTA;
+import estados.Estado_8_CREDITOS;
+import estados.Estado_20_INTRODUCCION;
+import estados.Estado_0_MENU;
+import estados.Estado_2_OPCIONES;
+import estados.Estado_9_PAUSE;
+import estados.Estado_1_PLAY;
 
 /**
  *
@@ -33,16 +33,18 @@ public class Game extends StateBasedGame {
     
     public static final int MENU = 0;
     public static final int OPTIONS = 2;
+    
+    public static AppGameContainer app;
 
     public Game() {
         super(GAMENAME);
-        this.addState(new Menu());
-        this.addState(new Opciones());
-        this.addState(new Creditos());
-        this.addState(new CrearProtagonista());
-        this.addState(new Play());
-        this.addState(new Pause());
-        this.addState(new Intro());
+        this.addState(new Estado_0_MENU());
+        this.addState(new Estado_2_OPCIONES());
+        this.addState(new Estado_8_CREDITOS());
+        this.addState(new Estado_14_CREAR_PROTEGONISTA());
+        this.addState(new Estado_1_PLAY());
+        this.addState(new Estado_9_PAUSE());
+        this.addState(new Estado_20_INTRODUCCION());
     }
 
     @Override
@@ -52,7 +54,7 @@ public class Game extends StateBasedGame {
 
     public static void run() {
         try {
-            AppGameContainer app = new AppGameContainer(new Game());
+            app = new AppGameContainer(new Game());
             app.setDisplayMode(WIDTH, HEIGHT, false);
             app.setTargetFrameRate(100);
             app.setShowFPS(false);
