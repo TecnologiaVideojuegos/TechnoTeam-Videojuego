@@ -1,0 +1,28 @@
+Game_0.9
+
+-Como hacer que funcione el videojuego
+Añadir la libreria slick2d al proyecto
+Crear libreria slick con los jar necesarios
+Click derecho properties, Java Build Path add library
+
+-Añadir comandos a la clase launcher
+Run run configurations, en vm arguments añadir -Djava.library.path=Ruta a la carpeta slick
+
+Cambios para que funcione el Eclipse
+utils.fuente.java Cambiar char tabc[] = {'Ã±'}; y poner una ñ
+
+Cambiar clase Dise+!o grafico por Diseño grafico
+
+
+-Cambios
+Todas las clases y metodos actuales estan comentados menos ScreenClass
+
+Estado 8 Creditos, cambie mi nombre porque me daba problemas al
+generar el Javadoc, puede que sea la tilde
+
+El Javadoc da algunos warnings pero se genera igualmente
+
+-Generar Javadoc
+Project, Generate Javadoc
+C:\Program Files\Java\jdk1.8.0_201\bin\javadoc.exe
+Esta creado en la carpeta doc, entrar en Index para ver el Javadoc en Internet
