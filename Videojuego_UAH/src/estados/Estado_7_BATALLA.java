@@ -251,7 +251,6 @@ public class Estado_7_BATALLA extends BasicGameState {
                 comentarios="Has ganado!!!! (SPACE para continuar)";
                 ganado = true;
                 Estado_Juego.enemys.get(Estado_Juego.levelID).setMuerto(true);
-                Analisis_Mapa.reset();
                 return true;
             }else if(partida_perdida()){
                 comentarios="Has perdido!! (SPACE para continuar)";

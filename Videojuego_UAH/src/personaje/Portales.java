@@ -15,8 +15,7 @@ public class Portales {
                 Estado_Juego.pos_x_hero = gameStatus.portalMapList.get(i).xNew;
                 Estado_Juego.pos_y_hero = gameStatus.portalMapList.get(i).yNew;
                 Estado_1_PLAY.needToMapUpdate = true;
-            }else if((Estado_Juego.enemys.get(Estado_Juego.levelID)!=null)&&((Estado_Juego.pos_x_hero >= (Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos()-30))&&(Estado_Juego.pos_x_hero <= (Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos()+48)))&&((Estado_Juego.pos_y_hero >= Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos()-30)&&(Estado_Juego.pos_y_hero <= Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos()+48))){
-                System.out.println("---------------------------->>>>He chocado contra enemigo "+Estado_Juego.pos_x_hero+" "+Estado_Juego.pos_y_hero);
+            }else if(!Estado_Juego.enemys.get(Estado_Juego.levelID).isMuerto()&&(Estado_Juego.enemys.get(Estado_Juego.levelID)!=null)&&((Estado_Juego.pos_x_hero >= (Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos()-30))&&(Estado_Juego.pos_x_hero <= (Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos()+48)))&&((Estado_Juego.pos_y_hero >= Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos()-30)&&(Estado_Juego.pos_y_hero <= Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos()+48))){
                 Estado_1_PLAY.dialogo=true;
             }
         }

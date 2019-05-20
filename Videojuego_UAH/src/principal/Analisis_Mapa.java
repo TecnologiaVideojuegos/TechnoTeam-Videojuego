@@ -26,7 +26,7 @@ public class Analisis_Mapa {
     public static Rectangle recPlayer, recField;
     
     public static void reset(){
-    collisions.clear();
+    
     }
 
     public void updateEntityFieldList(TiledMap map) {
@@ -45,18 +45,7 @@ public class Analisis_Mapa {
 
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
-        if (Estado_Juego.enemys.get(Estado_Juego.levelID) != null && !Estado_Juego.enemys.get(Estado_Juego.levelID).isMuerto()) {
-
-            if (Estado_Juego.levelID == 402) {
-                tam_x_enemy = 48;
-                tam_y_enemy = 64;
-            } else {
-                tam_x_enemy = 32;
-                tam_y_enemy = 32;
-            }
-            recField = new Rectangle(Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos(), Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos(), tam_x_enemy, tam_y_enemy);
-            collisions.add(recField);
-        }
+        collisions.clear();
         for (int i = 0; i < exist.length; i++) {
             for (int j = 0; j < exist[i].length; j++) {
                 if (exist[i][j] == true) {
