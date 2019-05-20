@@ -19,7 +19,7 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

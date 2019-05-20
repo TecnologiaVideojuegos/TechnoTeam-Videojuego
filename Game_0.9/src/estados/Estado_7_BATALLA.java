@@ -25,7 +25,7 @@ import principal.Estado_Juego;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 public class Estado_7_BATALLA extends BasicGameState {
 
@@ -117,7 +117,7 @@ public class Estado_7_BATALLA extends BasicGameState {
         frase.drawString(365, 670, info, Color.white);
         int i = 0, pos = 625;
         for (Ataque a : Estado_Juego.hero.getAtaques()) {
-            frase.drawString(pos, 550, a.getNombre(), colorOpcionSelecionada[i]);
+            frase.drawString((pos), 550, a.getNombre(), colorOpcionSelecionada[i]);
             pos += 240;
             i++;
         }

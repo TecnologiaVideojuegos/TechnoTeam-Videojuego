@@ -4,6 +4,7 @@ import principal.Estado_Juego;
 import principal.Analisis_Mapa;
 
 /**
+ * @author Techno team
  * Colisiones del Protagonista con el Mapa
  *
  */

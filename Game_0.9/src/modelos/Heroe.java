@@ -6,6 +6,7 @@ import org.newdawn.slick.SlickException;
 import personaje.Ataque;
 
 /**
+ * @author Techno team
  * Constructor del Protagonista
  *
  */

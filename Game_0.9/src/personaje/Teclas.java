@@ -6,6 +6,7 @@ import org.newdawn.slick.state.StateBasedGame;
 import utils.ScreenClass;
 
 /**
+ * @author Techno team
  * Teclas que puedes usar durante el Juego aparte de wasd
  *
  */

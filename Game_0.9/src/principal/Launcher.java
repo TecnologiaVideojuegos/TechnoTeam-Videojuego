@@ -7,7 +7,7 @@ package principal;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

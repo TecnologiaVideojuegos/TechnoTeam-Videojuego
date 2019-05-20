@@ -11,6 +11,7 @@ import utils.BBDD_Dialogo;
 import utils.BBDD_Enemigos;
 
 /**
+ * @author Techno team
  * Estado inicial del Juego, ocurre después de la Intro
  *
  */

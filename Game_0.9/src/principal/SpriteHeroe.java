@@ -6,6 +6,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 /**
+ * @author Techno team
  * Sprite del Heroe
  *
  */

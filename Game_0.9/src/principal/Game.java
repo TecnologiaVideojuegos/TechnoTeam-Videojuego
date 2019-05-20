@@ -24,7 +24,7 @@ import estados.Estado_7_BATALLA;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

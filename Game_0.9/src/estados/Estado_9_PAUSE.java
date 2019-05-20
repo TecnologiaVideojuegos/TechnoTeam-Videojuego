@@ -13,6 +13,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
+ * @author Techno team
  * Menu de pausa, puedes acceder a el pulsando ESC desde el Juego
  *
  */

@@ -14,6 +14,7 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
+ * @author Techno team
  * Creditos con los nombres de los integrantes del grupo
  *
  */

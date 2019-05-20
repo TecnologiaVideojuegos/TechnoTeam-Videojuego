@@ -16,7 +16,7 @@ import org.newdawn.slick.TrueTypeFont;
 import modelos.Frase;
 
 /**
- * 
+ * @author Techno team
  * Estado principal del VIdeojuego
  *
  */

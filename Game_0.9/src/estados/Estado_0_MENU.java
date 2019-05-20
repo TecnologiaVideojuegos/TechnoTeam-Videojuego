@@ -16,7 +16,7 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 
 
 /**
- * 
+ * @author Techno team
  * Menu principal del juego que aparece al iniciarlo
  *
  */

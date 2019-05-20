@@ -3,6 +3,7 @@ package modelos;
 import principal.SpriteGeneral;
 
 /**
+ * @author Techno team
  * Constructor de los enemigos del Juego
  *
  */

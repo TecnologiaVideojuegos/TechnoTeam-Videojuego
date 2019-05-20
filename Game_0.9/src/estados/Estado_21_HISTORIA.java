@@ -20,7 +20,7 @@ import principal.Estado_Juego;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

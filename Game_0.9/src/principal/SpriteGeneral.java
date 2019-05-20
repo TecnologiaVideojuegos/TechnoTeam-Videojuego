@@ -11,7 +11,7 @@ import org.newdawn.slick.SlickException;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

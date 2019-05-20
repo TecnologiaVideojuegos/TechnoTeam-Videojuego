@@ -7,7 +7,7 @@ package personaje;
 
 /**
  *
- * @author Michael Lofer
+ * @author Techno team
  */
 
 /**

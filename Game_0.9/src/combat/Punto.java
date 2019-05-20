@@ -7,7 +7,7 @@ package combat;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

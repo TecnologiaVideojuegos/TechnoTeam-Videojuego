@@ -16,6 +16,7 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
 /**
+ * @author Techno team
  * Se encarga de las colisiones que ocurren en el Mapa
  *
  */

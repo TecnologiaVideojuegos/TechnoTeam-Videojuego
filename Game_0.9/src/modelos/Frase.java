@@ -7,7 +7,7 @@ package modelos;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
  */
 
 /**

@@ -5,6 +5,7 @@ import org.newdawn.slick.SlickException;
 import estados.Estado_1_PLAY;
 
 /**
+ * @author Techno team
  * Cambia entre mapas y detecta colisiones con NPC y enemigos
  *
  */

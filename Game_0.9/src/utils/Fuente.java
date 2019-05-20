@@ -7,6 +7,7 @@ import java.io.IOException;
 import org.newdawn.slick.TrueTypeFont;
 
 /**
+ * @author Techno team
  * Letras que no aparecen en el inglés
  *
  */

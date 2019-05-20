@@ -18,7 +18,7 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import personaje.Ataque;
 
 /**
- * 
+ * @author Techno team
  * Primera opción del Menu principal (Jugar)
  *
  */
@@ -252,13 +252,13 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
                 Estado_Juego.hero.setHeroName(avatarName);
                 Estado_Juego.hero.setTempHeroHealth(Estado_Juego.hero.getResistencia()*15+500);
                 if(actualImage==0){
-                    ataque1 = new Ataque(35, "Achis", "Ataque 4", 10);
-                    ataque2 = new Ataque(55, "Achoz", "Ataque 5", 20);
-                    ataque3 = new Ataque(75, "Achaez", "Ataque 6", 70);
+                    ataque1 = new Ataque((10 + (Estado_Juego.hero.getFuerza()*10)), "tajo cargado", "Ataque 1", 10);
+                    ataque2 = new Ataque((10 + (Estado_Juego.hero.getMagia()*10)), "proyectil fátuo", "Ataque 2", 20);
+                    ataque3 = new Ataque((25 + (Estado_Juego.hero.getFuerza()*10+ Estado_Juego.hero.getMagia()*10)), "Megacorte ígneo", "Ataque 3", 50);
                 }else if(actualImage==1){
-                    ataque1 = new Ataque(35, "Achus", "Ataque 1", 10);
-                    ataque2 = new Ataque(55, "Achaz", "Ataque 2", 20);
-                    ataque3 = new Ataque(75, "Achez", "Ataque 3", 70);  
+                    ataque1 = new Ataque((30+ (Estado_Juego.hero.getFuerza()*10)), "tajo cargado", "Ataque 1", 10);
+                    ataque2 = new Ataque((30+ (Estado_Juego.hero.getMagia()*10)), "proyectil fátuo", "Ataque 2", 20);
+                    ataque3 = new Ataque((25 + (Estado_Juego.hero.getFuerza()*10+ Estado_Juego.hero.getMagia()*10)), "Megacorte ígneo", "Ataque 3", 50);  
                 }
                 Estado_Juego.hero.getAtaques().add(ataque1);
                 Estado_Juego.hero.getAtaques().add(ataque2);

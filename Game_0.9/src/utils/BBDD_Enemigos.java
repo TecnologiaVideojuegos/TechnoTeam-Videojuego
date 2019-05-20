@@ -6,6 +6,7 @@ import org.newdawn.slick.SlickException;
 import principal.SpriteGeneral;
 
 /**
+ * @author Techno team
  * Aqui se crean a los enemigos en los diferentes mapas
  *
  */

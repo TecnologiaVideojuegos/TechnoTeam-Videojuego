@@ -9,6 +9,7 @@ import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
+ * @author Techno team
  * Colisiones del Protagonista con los portales
  *
  */

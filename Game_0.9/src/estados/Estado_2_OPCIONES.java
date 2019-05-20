@@ -14,7 +14,7 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
- * 
+ * @author Techno team
  * Segunda opción del Menu principal (Opciones)
  *
  */

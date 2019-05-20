@@ -8,7 +8,7 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
- * 
+ * @author Techno team
  * Intro del Juego que sale despues de crear al personaje
  *
  */
