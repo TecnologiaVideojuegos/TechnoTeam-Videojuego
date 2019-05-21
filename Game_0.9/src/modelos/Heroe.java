@@ -15,11 +15,11 @@ public class Heroe {
     private String heroName;
     private ArrayList<Ataque> ataques;
 
-    private int tempHeroHealth;
+    private static int tempHeroHealth;
     private int maxHeroHealth;
 
     private int fuerza;
-    private int resistencia;
+    private static int resistencia;
     private int magia;
     
     private Image imagen;
@@ -49,6 +49,10 @@ public class Heroe {
         this.magia = inteligence;
         this.levelPoints = levelPoints;
         this.idHero = idHero;
+    }
+    
+    public static void restaurarVida() {
+    	tempHeroHealth=500+resistencia*15;
     }
 
     public void setImagen(Image imagen) {

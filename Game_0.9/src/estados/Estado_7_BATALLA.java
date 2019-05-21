@@ -20,6 +20,8 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+
+import modelos.Heroe;
 import personaje.Ataque;
 import principal.Estado_Juego;
 
@@ -159,6 +161,12 @@ public class Estado_7_BATALLA extends BasicGameState {
             if (input.isMouseButtonDown(0) && atacar == false) {
                 Estado_Juego.huir = true;
                 game.enterState(1, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
+                //Cambiar posición del heroe
+                Estado_Juego.pos_x_hero-=50;
+                Estado_Juego.pos_y_hero-=50;
+                //Restaura la vida al acabar el combate
+                Heroe.restaurarVida();
+
             }
         }
         if (atacar) {
@@ -256,6 +264,7 @@ public class Estado_7_BATALLA extends BasicGameState {
      */
     public boolean partida_ganada(){
         return Estado_Juego.enemys.get(Estado_Juego.levelID).getTempHeroHealth()<=0;
+        
     }
     
     /**
@@ -273,9 +282,13 @@ public class Estado_7_BATALLA extends BasicGameState {
             if(partida_ganada()){
                 comentarios="Has ganado!!!!";
                 ganado = true;
+                //Restaura la vida al acabar el combate
+                Heroe.restaurarVida();
                 return true;
             }else if(partida_perdida()){
                 comentarios="Has perdido :(";
+                //Restaura la vida al acabar el combate
+                Heroe.restaurarVida();
                 return false;
             }
         }
