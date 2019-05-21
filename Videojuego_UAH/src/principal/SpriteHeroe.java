@@ -5,9 +5,21 @@ import org.newdawn.slick.Animation;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Sprite del Heroe
+ *
+ */
 public class SpriteHeroe {
 
-
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     public Image imgSprite;
     public int heroHeight, heroWidth;
 
@@ -16,6 +28,15 @@ public class SpriteHeroe {
     public int[] duration = {durationScalar, durationScalar, durationScalar};
     public Animation avatar, movingUp, movingDown, movingLeft, movingRight;
 
+    
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Sprite del protagonista
+     * @throws SlickException
+     */
     public SpriteHeroe() throws SlickException {
 
         imgSprite = new Image("graphic/heroSprite/avatars" + Estado_Juego.spriteNumber + ".png");

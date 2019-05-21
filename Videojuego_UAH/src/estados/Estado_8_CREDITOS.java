@@ -13,8 +13,20 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class Estado_8_CREDITOS extends BasicGameState{
+/**
+ * @author Techno team
+ */
 
+/** 
+ * Creditos con los nombres de los integrantes del grupo
+ *
+ */
+public class Estado_8_CREDITOS extends BasicGameState{
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     Image fondo;
     Image back;
     String pos_mouse="";
@@ -23,20 +35,37 @@ public class Estado_8_CREDITOS extends BasicGameState{
     Color colorOpcionSelecionada[] = {colorTexto};
    
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
+    /**
+     * Constructor vacio
+     */
     public Estado_8_CREDITOS() {
     }
 
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 8;
     }
 
+    /**
+     * Crea las imagenes de la opción CREDITOS
+     */
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         fondo = new Image("graphic/menu/backgroundMainMenu.jpg");
         back = new Image("graphic/menu/buttonMenuPrincipal.png");
     }
 
+    /**
+     * Actualiza la opción
+     * 
+     */
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
@@ -65,6 +94,9 @@ public class Estado_8_CREDITOS extends BasicGameState{
         }
     }
 
+    /**
+     * Pinta los nombres de los miembros del grupo
+     */
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
 
@@ -76,18 +108,18 @@ public class Estado_8_CREDITOS extends BasicGameState{
 
         Fuente.print46().drawString(450, 100, "A U T O R E S", Color.white);
 
-        Fuente.print25().drawString(250, 200, "Ricardo zambrana Zúñiga", Color.white);
-        Fuente.print25().drawString(750, 200, "Técnico Sonido", Color.white);
+        Fuente.print25().drawString(250, 200, "Ricardo zambrana ZÃºÃ±iga", Color.white);
+        Fuente.print25().drawString(750, 200, "TÃ©cnico Sonido", Color.white);
         Fuente.print25().drawString(250, 250, "Miguel Herraez Sachez", Color.white);
-        Fuente.print25().drawString(750, 250, "Diseño grafico", Color.white);
-        Fuente.print25().drawString(250, 300, "Guzmán Bernaldo de Quirós", Color.white);
+        Fuente.print25().drawString(750, 250, "DiseÃ±o grafico", Color.white);
+        Fuente.print25().drawString(250, 300, "GuzmÃ¡n Bernaldo de QuirÃ³s", Color.white);
         Fuente.print25().drawString(750, 300, "Desarrollo Web", Color.white);
-        Fuente.print25().drawString(250, 350, "Álvaro Alcaide Muñoz de Rivera", Color.white);
+        Fuente.print25().drawString(250, 350, "Ã�lvaro Alcaide MuÃ±oz de Rivera", Color.white);
         Fuente.print25().drawString(750, 350, "Programador", Color.white);
-        Fuente.print25().drawString(250, 400, "José Andrés Gómez Suárez", Color.white);
+        Fuente.print25().drawString(250, 400, "JosÃ© AndrÃ©s GÃ³mez SuÃ¡rez", Color.white);
         Fuente.print25().drawString(750, 400, "Jefe Proyecto", Color.white);
 
-        Fuente.print18().drawString(350, 545, "'Nunca hay que subestimar el poder de la imaginación'", Color.white);
+        Fuente.print18().drawString(350, 545, "'Nunca hay que subestimar el poder de la imaginaciÃ³n'", Color.white);
 
         Fuente.print25().drawString(580, 625, "VOLVER", colorOpcionSelecionada[0]);
         

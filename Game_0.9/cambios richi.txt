@@ -1,3 +1,0 @@
-la clase bbdd tiene mas dialogo
-los ataques he cambiado su daño para q quede mas conforme y su nombre
-he comentado lo q faltaba que he visto ( como era el autor de todo )

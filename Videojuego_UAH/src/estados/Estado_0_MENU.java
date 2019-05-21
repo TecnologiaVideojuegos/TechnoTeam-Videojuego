@@ -14,8 +14,21 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
+
+/**
+ * @author Techno team
+ */
+
+/**
+ * Menu principal del juego que aparece al iniciarlo
+ *
+ */
 public class Estado_0_MENU extends BasicGameState {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     Image fondo;
     Image buttonBB;
     private Color colorTexto = Color.white;
@@ -24,21 +37,39 @@ public class Estado_0_MENU extends BasicGameState {
     
 
     private String pos_mouse = "";
+    
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+    
 
+    /**
+     * Constructor vacio
+     */
     public Estado_0_MENU() {
     }
 
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 0;
     }
 
+    /**
+     * Crea las imagenes del Menu
+     */
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         fondo = new Image("graphic/menu/backgroundMainMenu.jpg");
         buttonBB = new Image("graphic/menu/buttonMenuPrincipal.png");
     }
 
+    
+    /**
+     * Actualiza el Menu y te permite escoger entre sus opciones
+     */
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
 
@@ -82,6 +113,10 @@ public class Estado_0_MENU extends BasicGameState {
         }
     }
 
+    
+    /**
+     * Pinta el Menu
+     */
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 

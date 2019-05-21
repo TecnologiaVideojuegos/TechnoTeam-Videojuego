@@ -23,11 +23,21 @@ import estados.Estado_21_HISTORIA;
 import estados.Estado_7_BATALLA;
 
 /**
- *
- * @author Sengo
+ * @author Techno team
  */
+
+/** 
+* Clase principal del Juego
+* Aqui están todos los Estados 
+*
+*/
 public class Game extends StateBasedGame {
 
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     public static final String GAMENAME = "Tyrfing";
     
     public static final int WIDTH = 1344;
@@ -38,6 +48,13 @@ public class Game extends StateBasedGame {
     
     public static AppGameContainer app;
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Añade los estados al Juego
+     */
     public Game() {
         super(GAMENAME);
         this.addState(new Estado_0_MENU());
@@ -51,11 +68,17 @@ public class Game extends StateBasedGame {
         this.addState(new Estado_7_BATALLA());
     }
 
+    /**
+     * Comienza los Estados
+     */
     @Override
     public void initStatesList(GameContainer container) throws SlickException {
         enterState(MENU);
     }
 
+    /**
+     * Inicia el Juego
+     */
     public static void run() {
         try {
             app = new AppGameContainer(new Game());

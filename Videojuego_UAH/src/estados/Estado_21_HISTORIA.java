@@ -19,11 +19,20 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import principal.Estado_Juego;
 
 /**
+ * @author Techno team
+ */
+
+/** 
+ * Dialogos de los NPC
  *
- * @author Sengo
  */
 public class Estado_21_HISTORIA extends BasicGameState {
-
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
+	
     public static final int ID = 21;
     private Image introimg;
     private float posy;
@@ -31,11 +40,21 @@ public class Estado_21_HISTORIA extends BasicGameState {
     private boolean movimiento;
     private int msFinal;
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return ID;
     }
 
+    /**
+     * Crea los dialogos
+     */
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         posy = 0;
@@ -45,11 +64,18 @@ public class Estado_21_HISTORIA extends BasicGameState {
         msFinal = 0;
     }
 
+    /**
+     * Pinta los dialogos
+     */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         introimg.draw(0, -posy);
     }
 
+    /**
+     * Actualiza el Juego y cambia entre dialogos
+     * 
+     */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) {
         if (movimiento) {

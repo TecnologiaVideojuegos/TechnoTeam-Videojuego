@@ -17,9 +17,20 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 import personaje.Ataque;
 
+/**
+ * @author Techno team
+ */
+
+ /**
+  * Primera opción del Menu principal (Jugar)
+  */
 public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
 
-    Image fondo;
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	Image fondo;
     Image fondoCrearProtagonista;
     String mouse;
 
@@ -40,14 +51,28 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
 
     Color ctab[] = {colorTexto, colorTexto, colorTexto};
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+
+    /**
+     * Constructor vacio
+     */
     public Estado_14_CREAR_PROTEGONISTA() {
     }
 
+    
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 14;
     }
 
+    /**
+     * Crea las imagenes de la opción Jugar
+     */
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         fondo = new Image("graphic/menu/backgroundMainMenu.jpg");
@@ -62,6 +87,9 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
         actualImage = 0;
     }
 
+    /**
+     * Te permite escoger los atributos, nombre y Sprite de tu protagonista
+     */
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
@@ -211,8 +239,8 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
                 }
             }
         }
+   
         //START BUTTON
-
         if ((xpos > 664 && xpos < 813) && (ypos > 220 && ypos < 263)) {
             ctab[0] = opcionSeleccionada;
             if (input.isMousePressed(0) && !avatarName.equalsIgnoreCase("")&&Estado_Juego.hero.getLevelPoints()==0) {
@@ -240,6 +268,9 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
         }
     }
 
+    /**
+     * Pinta la opción
+     */
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 

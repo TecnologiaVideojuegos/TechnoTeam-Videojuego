@@ -14,10 +14,26 @@ import principal.SpriteGeneral;
  */
 
 /**
- *
- * @author Sengo
- */
+*
+* @author Techno team
+*/
+
+/**
+* Dialogo de los NPC y enemigos
+*
+*/
 public class BBDD_Dialogo {
+	
+	
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+	/**
+	 * Dialogos
+	 * @return
+	 * @throws SlickException
+	 */
     public static HashMap<Integer, Frase> dialogoData() throws SlickException {
         HashMap<Integer, Frase> enemyData = new HashMap<Integer, Frase>() {
             {

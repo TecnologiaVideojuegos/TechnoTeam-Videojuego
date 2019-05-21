@@ -10,7 +10,13 @@ import org.newdawn.slick.SlickException;
 
 /**
  *
- * @author Sengo
+ * @author Techno team
+ */
+
+/**
+ * 
+ * Constructor de las imagenes (Sprites)
+ *
  */
 public class Sprite extends Image {
 

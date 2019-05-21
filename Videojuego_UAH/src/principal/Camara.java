@@ -4,6 +4,14 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.geom.Shape;
 import org.newdawn.slick.tiled.TiledMap;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor de la cámara
+ *
+ */
 public class Camara {
 
     public TiledMap map;

@@ -6,8 +6,20 @@ import principal.SpriteHeroe;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Te permite mover al personaje con wasd o con las flechas de dirección
+ *
+ */
 public class MovimientoPersonaje extends SpriteHeroe {
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
     public MovimientoPersonaje() throws SlickException {
     }
 

@@ -12,8 +12,20 @@ import org.newdawn.slick.tiled.TiledMap;
 import utils.BBDD_Dialogo;
 import utils.BBDD_Enemigos;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Estado inicial del Juego, ocurre después de la Intro
+ *
+ */
 public class Estado_Juego extends Analisis_Mapa {
 
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
 
     public static boolean musicOn;
     public static Sound music;
@@ -33,6 +45,15 @@ public class Estado_Juego extends Analisis_Mapa {
     public static HashMap<Integer, Enemigo> enemys;
     public static HashMap<Integer, Frase> dialogo;
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    
+    /**
+     * Crea el mapa inicial y pone al heroe en su posición inicial
+     * @throws SlickException
+     */
     public Estado_Juego() throws SlickException {
         musicOn = true;
         music = new Sound("music/cancion_intro_al_juego.ogg");

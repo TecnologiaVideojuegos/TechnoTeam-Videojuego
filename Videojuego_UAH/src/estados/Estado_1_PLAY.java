@@ -15,8 +15,20 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.TrueTypeFont;
 import modelos.Frase;
 
+/**
+ * @author Techno team
+ */
+
+ /** 
+  * Estado principal del Videojuego
+  */
 public class Estado_1_PLAY extends BasicGameState {
 
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     public static boolean needToMapUpdate = false;
 
     public static Estado_Juego gameStatus;
@@ -33,14 +45,27 @@ public class Estado_1_PLAY extends BasicGameState {
     private TrueTypeFont personaje, frase;
     private Font tipo_letra_dialogo = new Font("Arial Black", Font.PLAIN, 15);
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
+    /**
+     * Constructor vacio
+     */
     public Estado_1_PLAY() {
     }
 
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 1;
     }
 
+    /**
+     * Crea las imagenes del Juego principal
+     */
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
         gameStatus = new Estado_Juego();
@@ -52,6 +77,10 @@ public class Estado_1_PLAY extends BasicGameState {
 
     }
 
+    /**
+     * Actualiza el Juego
+     * 
+     */
     @Override
     public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
 
@@ -66,6 +95,9 @@ public class Estado_1_PLAY extends BasicGameState {
         }
     }
 
+    /**
+     * Pinta el mapa del juego y a los personajes
+     */
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
         if (!Estado_Juego.music.playing()) {
@@ -91,17 +123,27 @@ public class Estado_1_PLAY extends BasicGameState {
 
     }
 
+    
+    /**
+     * Actualiza GameStatus
+     * 
+     */
     public void updateGameStatus(GameContainer container) {
         needToMapUpdate = false;
         gameStatus.updatePortalMapList(gameStatus.portalMapList);
     }
     
+    /**
+     * Detiene la música
+     */
     @Override
-
     public void leave(GameContainer container, StateBasedGame game) throws SlickException {
         Estado_Juego.music.stop();
     }
 
+    /**
+     * 
+     */
     private boolean lucha_dragon() {
         if (Estado_Juego.enemys.get(400).isMuerto() && Estado_Juego.enemys.get(401).isMuerto() && Estado_Juego.enemys.get(403).isMuerto() && Estado_Juego.enemys.get(404).isMuerto() && Estado_Juego.levelID == 402) {
             return true;
@@ -109,6 +151,9 @@ public class Estado_1_PLAY extends BasicGameState {
         return false;
     }
 
+    /** 
+     * Crea el dialogo del dragón
+     */
     private void renderDialogoDragon(Input input, StateBasedGame sbg) throws SlickException {
         Frase f = Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i);
         if (dialogo && Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) != null) {
@@ -133,6 +178,10 @@ public class Estado_1_PLAY extends BasicGameState {
         }
     }
 
+    /**
+     * 
+     * Crea el dialogo que aparece al acercarte al un npc
+     */
     private void renderDialogo(Input input, StateBasedGame sbg) throws SlickException {
         Frase f = Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i);
         if (dialogo && Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) != null) {
@@ -149,7 +198,7 @@ public class Estado_1_PLAY extends BasicGameState {
                 this.avatarDialogo.draw(POSICIONAVATARX, POSICIONAVATARY, 1);
                 frase.drawString(160, 645, f.getFrase());
             } else if (Estado_Juego.levelID == 402) {
-                frase.drawString(160, 645, "DERROTA A TODOS LOS ENEMIGOS Y PODRÁS LUCHAR CON EL DRAGÓN");
+                frase.drawString(160, 645, "DERROTA A TODOS LOS ENEMIGOS Y PODRÃ�S LUCHAR CON EL DRAGÃ“N");
             }
 
             if (input.isKeyPressed(Input.KEY_SPACE)) {

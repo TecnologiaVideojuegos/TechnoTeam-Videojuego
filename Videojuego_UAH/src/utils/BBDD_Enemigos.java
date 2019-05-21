@@ -5,8 +5,26 @@ import modelos.Enemigo;
 import org.newdawn.slick.SlickException;
 import principal.SpriteGeneral;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Aqui se crean a los enemigos en los diferentes mapas
+ *
+ */
 public class BBDD_Enemigos {
 
+	
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+	/**
+	 * Enemigos
+	 * @return
+	 * @throws SlickException
+	 */
     public static HashMap<Integer, Enemigo> enemyData() throws SlickException {
         HashMap<Integer, Enemigo> enemyData = new HashMap<Integer, Enemigo>() {
             {

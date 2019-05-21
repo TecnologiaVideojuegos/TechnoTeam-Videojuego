@@ -6,8 +6,13 @@
 package combat;
 
 /**
+ *  @author Techno team
+ */
+
+/**
  *
- * @author Sengo
+ * Constructor que guarda  posiciones 
+ *
  */
 public class Punto {
 

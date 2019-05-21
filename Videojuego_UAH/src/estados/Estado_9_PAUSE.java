@@ -12,8 +12,20 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class Estado_9_PAUSE extends BasicGameState {
+/**
+ * @author Techno team
+ */
 
+/** 
+ * Menu de pausa, puedes acceder a el pulsando ESC desde el Juego
+ *
+ */
+public class Estado_9_PAUSE extends BasicGameState {
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     private String actualScr;
 
     private static int actualSubWindow = 0;
@@ -24,18 +36,34 @@ public class Estado_9_PAUSE extends BasicGameState {
 
     private final Color colorTextos[] = {colorTexto, colorTexto, colorTexto, colorTexto};
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
+    /**
+     * Constructor vacio
+     */
     public Estado_9_PAUSE() {
     }
 
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 9;
     }
 
+    /**
+     * Crea las imagenes del Menu de pausa
+     */
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
     }
 
+    /**
+     * Actualiza el Menu de pausa y te permite escoger las diferentes opciones
+     */
     @Override
     public void update(GameContainer gc, StateBasedGame sbg, int i) throws SlickException {
         Input input = gc.getInput();
@@ -114,6 +142,9 @@ public class Estado_9_PAUSE extends BasicGameState {
         }
     }
 
+    /**
+     * Pinta el Menu de pausa
+     */
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
 

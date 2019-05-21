@@ -3,8 +3,20 @@ package personaje;
 import principal.Estado_Juego;
 import principal.Analisis_Mapa;
 
-public class Colisiones {
+/**
+ * @author Techno team
+ */
 
+/** 
+ * Colisiones del Protagonista con el Mapa
+ *
+ */
+public class Colisiones {
+    
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
     public Colisiones() {
     }
 

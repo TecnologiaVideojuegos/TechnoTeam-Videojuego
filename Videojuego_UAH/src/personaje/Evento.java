@@ -8,18 +8,51 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.StateBasedGame;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Colisiones del Protagonista con los portales
+ *
+ */
 public class Evento {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     private MovimientoPersonaje movement;
     private Colisiones collisionFields;
     private Portales portals;
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+    
+    /**
+     * Constructor
+     * @param sprite
+     * @throws SlickException
+     */
     public Evento(SpriteHeroe sprite) throws SlickException {
         this.movement = new MovimientoPersonaje();
         this.collisionFields = new Colisiones();
         this.portals = new Portales();
     }
 
+    /**
+     * Actualiza la posición del Protagonista constantemente
+     * para ver si se ha chocado con algun portal
+     * @param container
+     * @param sbg
+     * @param delta
+     * @param gs
+     * @param input
+     * @param xPos
+     * @param yPos
+     * @throws SlickException
+     */
     public void update(GameContainer container, StateBasedGame sbg, int delta, Estado_Juego gs, Input input, int xPos, int yPos) throws SlickException {
 
         int oldX = Estado_Juego.pos_x_hero;

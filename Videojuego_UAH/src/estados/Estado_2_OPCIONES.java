@@ -14,27 +14,54 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 import principal.Estado_Juego;
 
+/**
+ * @author Techno team
+ */
+
+ /** 
+  * Segunda opción del Menu principal (Opciones)
+  */
 public class Estado_2_OPCIONES extends BasicGameState {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     Color colorTexto = Color.white;
     Color opcionSeleccionada = Color.orange;
     Color ctab[] = {colorTexto, colorTexto, colorTexto, colorTexto, colorTexto};
 
     Fuente font2;
 
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
+    /**
+     * Constructor vacio
+     */
     public Estado_2_OPCIONES() {
     }
 
+    /**
+     * ID de la clase usado para cambiar entre estados
+     */
     @Override
     public int getID() {
         return 2;
     }
 
+    /**
+     * Crea las imagenes
+     */
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
         font2 = new Fuente();
     }
 
+    /**
+     * Pinta Opciones
+     */
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
 
@@ -60,6 +87,9 @@ public class Estado_2_OPCIONES extends BasicGameState {
         Fuente.print25().drawString(565, 600, "Volver", ctab[4]);
     }
 
+    /**
+     * Esto no hace nada de momento
+     */
     @Override
     public void update(GameContainer container, StateBasedGame sbg, int i) throws SlickException {
         Input input = container.getInput();

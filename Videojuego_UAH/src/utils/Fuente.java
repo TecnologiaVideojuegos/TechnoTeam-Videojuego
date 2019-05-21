@@ -6,7 +6,21 @@ import java.io.File;
 import java.io.IOException;
 import org.newdawn.slick.TrueTypeFont;
 
+/**
+ * @author Techno team
+ */
+
+/**
+ * Letras que no aparecen en el inglés
+ *
+ */
 public class Fuente {
+
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
 
     public Font font;
     private static TrueTypeFont printHead;
@@ -15,8 +29,16 @@ public class Fuente {
     private static TrueTypeFont printBigLogo;
     private static TrueTypeFont printMediumLogo;
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Letras del español
+     * Cambiar Ã± por ñ si da error
+     */
     public Fuente() {
-        char tabc[] = {'Ã±'};
+        char tabc[] = {'ñ'};//Ã± o ñ
         try {
             //Utworzenie czcionki
             font = Font.createFont(Font.TRUETYPE_FONT, new File("res/fonts/TrajanPro-Regular.otf"));
