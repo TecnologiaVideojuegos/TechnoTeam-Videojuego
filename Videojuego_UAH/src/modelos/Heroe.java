@@ -45,6 +45,10 @@ public class Heroe {
         this.levelPoints = levelPoints;
         this.idHero = idHero;
     }
+    
+    public void reset(){
+        this.tempHeroHealth = this.maxHeroHealth;
+    }
 
     public void setImagen(Image imagen) {
         this.imagen = imagen;
@@ -123,6 +127,7 @@ public class Heroe {
 
     public void setTempHeroHealth(int tempHeroHealth) {
         this.tempHeroHealth = tempHeroHealth;
+        this.maxHeroHealth = tempHeroHealth;
     }
 
     public int getMaxHeroHealth() {

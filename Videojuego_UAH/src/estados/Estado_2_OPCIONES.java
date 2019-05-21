@@ -12,6 +12,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
+import principal.Estado_Juego;
 
 public class Estado_2_OPCIONES extends BasicGameState {
 
@@ -51,7 +52,11 @@ public class Estado_2_OPCIONES extends BasicGameState {
         Fuente.print25().drawString(565, 260, "Opción 1", ctab[0]);
         Fuente.print25().drawString(565, 345, "Opción 2", ctab[1]);
         Fuente.print25().drawString(565, 430, "Opción 3", ctab[2]);
-        Fuente.print25().drawString(565, 515, "Opción 4", ctab[3]);
+        if (Estado_Juego.musicOn) {
+            Fuente.print25().drawString(590, 384, "MUSIC OFF", ctab[3]);
+        } else {
+            Fuente.print25().drawString(590, 389, "MUSIC ON", ctab[3]);
+        }
         Fuente.print25().drawString(565, 600, "Volver", ctab[4]);
     }
 
@@ -86,6 +91,12 @@ public class Estado_2_OPCIONES extends BasicGameState {
         if ((xpos > 520 && xpos < 777) && (ypos > 156 && ypos < 229)) {
             ctab[3] = opcionSeleccionada;
             if (input.isMouseButtonDown(0)) {
+                 Estado_Juego.musicOn = !Estado_Juego.musicOn;
+                 if(Estado_Juego.musicOn){
+                 Estado_Juego.music.play();
+                 }else{
+                 Estado_Juego.music.stop();
+                 }
             }
         }
         if ((xpos > 520 && xpos < 777) && (ypos > 69 && ypos < 144)) {

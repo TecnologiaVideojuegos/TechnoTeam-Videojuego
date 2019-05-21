@@ -5,7 +5,9 @@ import java.util.HashMap;
 import modelos.Enemigo;
 import modelos.Frase;
 import modelos.Heroe;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 import org.newdawn.slick.tiled.TiledMap;
 import utils.BBDD_Dialogo;
 import utils.BBDD_Enemigos;
@@ -14,6 +16,7 @@ public class Estado_Juego extends Analisis_Mapa {
 
 
     public static boolean musicOn;
+    public static Sound music;
 
     public static int levelID;
     public TiledMap map;
@@ -32,6 +35,10 @@ public class Estado_Juego extends Analisis_Mapa {
 
     public Estado_Juego() throws SlickException {
         musicOn = true;
+        music = new Sound("music/cancion_intro_al_juego.ogg");
+        if (!music.playing()) {
+            music.play();
+        }
 
         levelID = 400;
         mapPath = "graphic/map/" + Integer.toString(levelID) + ".tmx";

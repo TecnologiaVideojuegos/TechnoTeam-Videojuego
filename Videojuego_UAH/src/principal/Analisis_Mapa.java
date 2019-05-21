@@ -16,13 +16,11 @@ import org.newdawn.slick.tiled.TiledMap;
 
 public class Analisis_Mapa {
 
-    int collisionID, tam_x_enemy, tam_y_enemy;
-    public int collisionTileID;
-    public int testField, testPortal;
-    boolean[][] exist;
+    private int collisionID;
+    private int collisionTileID;
+    private int testField;
+    private boolean[][] exist;
     public static ArrayList<Rectangle> collisions;
-    public static ArrayList<Rectangle> npc;
-    public static ArrayList<Rectangle> mobs;
     public static Rectangle recPlayer, recField;
     
     public static void reset(){

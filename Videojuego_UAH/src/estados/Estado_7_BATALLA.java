@@ -21,7 +21,6 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 import personaje.Ataque;
-import principal.Analisis_Mapa;
 import principal.Estado_Juego;
 
 /**
@@ -141,6 +140,7 @@ public class Estado_7_BATALLA extends BasicGameState {
         if ((pos_x > 70 && pos_x < 290) && (pos_y > 65 && pos_y < 110) && atacar == false) {
             atacar_huir[1] = Color.orange;
             if (input.isMouseButtonDown(0) && atacar == false) {
+                Estado_Juego.hero.reset();
                 Estado_Juego.huir = true;
                 game.enterState(1, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
             }
@@ -225,7 +225,7 @@ public class Estado_7_BATALLA extends BasicGameState {
             if(comprobacion()==true){
                 game.enterState(21, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
             }else if(comprobacion()==false && partida_perdida()==true){
-                game.enterState(1, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
+                game.enterState(0, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
             }
         }
 
@@ -250,10 +250,13 @@ public class Estado_7_BATALLA extends BasicGameState {
             if(partida_ganada()){
                 comentarios="Has ganado!!!! (SPACE para continuar)";
                 ganado = true;
+                Estado_Juego.hero.reset();
                 Estado_Juego.enemys.get(Estado_Juego.levelID).setMuerto(true);
                 return true;
             }else if(partida_perdida()){
                 comentarios="Has perdido!! (SPACE para continuar)";
+                Estado_Juego.enemys.get(Estado_Juego.levelID).reset();
+                Estado_Juego.hero.reset();
                 return false;
             }
         }

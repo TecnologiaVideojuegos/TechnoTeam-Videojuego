@@ -34,6 +34,10 @@ public class Enemigo {
     public boolean isMuerto() {
         return muerto;
     }
+    
+    public void reset(){
+        this.tempHeroHealth = this.maxHeroHealth;
+    }
 
     public void setMuerto(boolean muerto) {
         this.muerto = muerto;
@@ -63,6 +67,7 @@ public class Enemigo {
 
     public void setTempHeroHealth(int tempHeroHealth) {
         this.tempHeroHealth = tempHeroHealth;
+        this.maxHeroHealth = tempHeroHealth;
     }
 
     public void setFuerza(int fuerza) {

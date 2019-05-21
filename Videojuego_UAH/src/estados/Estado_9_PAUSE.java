@@ -96,6 +96,11 @@ public class Estado_9_PAUSE extends BasicGameState {
                     System.exit(0);
                 } else {
                     principal.Estado_Juego.musicOn = !principal.Estado_Juego.musicOn;
+                    if (Estado_Juego.musicOn) {
+                        Estado_Juego.music.play();
+                    } else {
+                        Estado_Juego.music.stop();
+                    }
                 }
             }
         }

@@ -1,19 +1,19 @@
 package modelos;
 public class Portal {
     
-    public int xStart;
+    private int xStart;
     
-    public int xEnd;
+    private int xEnd;
     
-    public int yStart;
+    private int yStart;
     
-    public int yEnd;
+    private int yEnd;
     
-    public int levelID;
+    private int levelID;
     
-    public int xNew;
+    private int xNew;
     
-    public int yNew;
+    private int yNew;
 
     public Portal() {
     }
@@ -28,10 +28,35 @@ public class Portal {
         this.yNew = yN;
     }
 
-    @Override
-    public String toString() {
-        return "Portal{" + "xStart=" + xStart + ", xEnd=" + xEnd + ", yStart=" + yStart + ", yEnd=" + yEnd + ", levelID=" + levelID + ", xN=" + xNew + ", yN=" + yNew + '}';
+    public int getLevelID() {
+        return levelID;
     }
+
+    public int getxEnd() {
+        return xEnd;
+    }
+
+    public int getxNew() {
+        return xNew;
+    }
+
+    public int getxStart() {
+        return xStart;
+    }
+
+    public int getyEnd() {
+        return yEnd;
+    }
+
+    public int getyNew() {
+        return yNew;
+    }
+
+    public int getyStart() {
+        return yStart;
+    }
+    
+    
 
     public void setxStart(int xStart) {
         this.xStart = xStart;

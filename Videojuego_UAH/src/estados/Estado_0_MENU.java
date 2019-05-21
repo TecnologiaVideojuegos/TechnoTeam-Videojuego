@@ -21,7 +21,7 @@ public class Estado_0_MENU extends BasicGameState {
     private Color colorTexto = Color.white;
     private final Color colorOpcionSelecionada[] = {colorTexto, colorTexto, colorTexto, colorTexto};
 
-    public static Music music;
+    
 
     private String pos_mouse = "";
 
@@ -37,9 +37,6 @@ public class Estado_0_MENU extends BasicGameState {
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
         fondo = new Image("graphic/menu/backgroundMainMenu.jpg");
         buttonBB = new Image("graphic/menu/buttonMenuPrincipal.png");
-        music = new Music("music/cancion_intro_al_juego.ogg");
-        music.setVolume(1);
-        music.loop(1.0F, 0.1F);
     }
 
     @Override
