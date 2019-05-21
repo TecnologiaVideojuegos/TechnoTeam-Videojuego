@@ -22,7 +22,7 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 import modelos.Heroe;
-import personaje.Ataque;
+import modelos.Ataque;
 import principal.Estado_Juego;
 
 /**

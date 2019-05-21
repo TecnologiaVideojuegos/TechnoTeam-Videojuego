@@ -3,7 +3,6 @@ package modelos;
 import java.util.ArrayList;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
-import personaje.Ataque;
 
 /**
  * @author Techno team

@@ -15,14 +15,14 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
-import personaje.Ataque;
+import modelos.Ataque;
 
 /**
  * @author Techno team
  */
 
  /**
-  * Primera opción del Menu principal (Jugar)
+  * Primera opciï¿½n del Menu principal (Jugar)
   */
 public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
 
@@ -52,7 +52,7 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
     Color ctab[] = {colorTexto, colorTexto, colorTexto};
 
 	//---------------------------------------------
-	//Métodos
+	//Mï¿½todos
 	//---------------------------------------------
 
     /**
@@ -71,7 +71,7 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
     }
 
     /**
-     * Crea las imagenes de la opción Jugar
+     * Crea las imagenes de la opciï¿½n Jugar
      */
     @Override
     public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
@@ -269,7 +269,7 @@ public class Estado_14_CREAR_PROTEGONISTA extends BasicGameState {
     }
 
     /**
-     * Pinta la opción
+     * Pinta la opciï¿½n
      */
     @Override
     public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {

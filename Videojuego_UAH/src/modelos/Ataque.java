@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package personaje;
+package modelos;
 
 /**
  * @author Techno team
@@ -24,7 +24,7 @@ public class Ataque {
 
     
 	//---------------------------------------------
-	//Métodos
+	//Mï¿½todos
 	//---------------------------------------------
 	
     public Ataque(int dmg, String nombre, String descripcion, int probabilidadFallo) {
