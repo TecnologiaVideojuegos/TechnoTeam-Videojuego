@@ -57,6 +57,7 @@ public class Estado_1_PLAY extends BasicGameState {
 
     /**
      * ID de la clase usado para cambiar entre estados
+     * @return 
      */
     @Override
     public int getID() {
@@ -65,6 +66,9 @@ public class Estado_1_PLAY extends BasicGameState {
 
     /**
      * Crea las imagenes del Juego principal
+     * @param container
+     * @param sbg
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void init(GameContainer container, StateBasedGame sbg) throws SlickException {
@@ -80,6 +84,10 @@ public class Estado_1_PLAY extends BasicGameState {
     /**
      * Actualiza el Juego
      * 
+     * @param container
+     * @param sbg
+     * @param delta
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void update(GameContainer container, StateBasedGame sbg, int delta) throws SlickException {
@@ -97,11 +105,18 @@ public class Estado_1_PLAY extends BasicGameState {
 
     /**
      * Pinta el mapa del juego y a los personajes
+     * @param container
+     * @param sbg
+     * @param g
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void render(GameContainer container, StateBasedGame sbg, Graphics g) throws SlickException {
         if (!Estado_Juego.music.playing()) {
             Estado_Juego.music.play();
+        }
+        if (Estado_Juego.levelID == 402) {
+            Estado_Juego.escena_final = true;
         }
         Input input = container.getInput();
         try {
@@ -115,10 +130,14 @@ public class Estado_1_PLAY extends BasicGameState {
         if (Estado_Juego.enemys.get(Estado_Juego.levelID) != null && !Estado_Juego.enemys.get(Estado_Juego.levelID).isMuerto()) {
             Estado_Juego.enemys.get(Estado_Juego.levelID).getSprite().avatar.draw(Estado_Juego.enemys.get(Estado_Juego.levelID).getX_pos(), Estado_Juego.enemys.get(Estado_Juego.levelID).getY_pos());
         }
-        if (lucha_dragon() == false) {
+        if(dialogo){
             renderDialogo(input, sbg);
-        } else if (lucha_dragon() == true) {
-            renderDialogoDragon(input, sbg);
+        }
+        
+        if (Estado_Juego.huir || Estado_Juego.ganar) {
+            i = 1;
+            Estado_Juego.huir = false;
+            Estado_Juego.ganar = false;
         }
 
     }
@@ -127,6 +146,7 @@ public class Estado_1_PLAY extends BasicGameState {
     /**
      * Actualiza GameStatus
      * 
+     * @param container
      */
     public void updateGameStatus(GameContainer container) {
         needToMapUpdate = false;
@@ -135,6 +155,9 @@ public class Estado_1_PLAY extends BasicGameState {
     
     /**
      * Detiene la música
+     * @param container
+     * @param game
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void leave(GameContainer container, StateBasedGame game) throws SlickException {
@@ -142,40 +165,11 @@ public class Estado_1_PLAY extends BasicGameState {
     }
 
     /**
-     * 
+     * Comprobamos que todos los enemigos están muertos para poder acceder a la escena final
+     * @return true si todos están muertos, false si todavia queda alguno vivo.
      */
-    private boolean lucha_dragon() {
-        if (Estado_Juego.enemys.get(400).isMuerto() && Estado_Juego.enemys.get(401).isMuerto() && Estado_Juego.enemys.get(403).isMuerto() && Estado_Juego.enemys.get(404).isMuerto() && Estado_Juego.levelID == 402) {
-            return true;
-        }
-        return false;
-    }
-
-    /** 
-     * Crea el dialogo del dragón
-     */
-    private void renderDialogoDragon(Input input, StateBasedGame sbg) throws SlickException {
-        Frase f = Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i);
-        if (dialogo && Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) != null) {
-            this.ventanaDialogo.draw(0, 620, 1);
-
-            if (f.getPersonaje().equalsIgnoreCase("Hero")) {
-                avatarDialogo = new Image("graphic/dialogo/" + Estado_Juego.hero.getIdHero() + ".png");
-                personaje.drawString(160, 625, Estado_Juego.hero.getHeroName());
-            } else {
-                avatarDialogo = new Image("graphic/dialogo/" + f.getIdPersonaje() + ".png");
-                personaje.drawString(160, 625, f.getPersonaje());
-            }
-            this.avatarDialogo.draw(POSICIONAVATARX, POSICIONAVATARY, 1);
-            frase.drawString(160, 645, f.getFrase());
-            if (input.isKeyPressed(Input.KEY_SPACE)) {
-                i++;
-            }
-        } else if (Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) == null && !Estado_Juego.enemys.get(Estado_Juego.levelID).isMuerto()) {
-            dialogo = false;
-            sbg.enterState(7);
-
-        }
+    public static boolean lucha_dragon() {
+        return Estado_Juego.enemys.get(400).isMuerto() && Estado_Juego.enemys.get(401).isMuerto() && Estado_Juego.enemys.get(403).isMuerto() && Estado_Juego.enemys.get(404).isMuerto();
     }
 
     /**
@@ -184,10 +178,19 @@ public class Estado_1_PLAY extends BasicGameState {
      */
     private void renderDialogo(Input input, StateBasedGame sbg) throws SlickException {
         Frase f = Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i);
+
         if (dialogo && Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) != null) {
             this.ventanaDialogo.draw(0, 620, 1);
 
-            if (Estado_Juego.levelID != 402) {
+            if (Estado_Juego.escena_final && !lucha_dragon()) {
+                frase.drawString(160, 645, "DERROTA A TODOS LOS ENEMIGOS Y PODRÁS LUCHAR CON EL DRAGÓN");
+                if (input.isKeyPressed(Input.KEY_SPACE)) {
+                    Estado_Juego.escena_final = false;
+                    dialogo=false;
+                    Estado_Juego.levelID=401;
+                    needToMapUpdate=true;
+                }
+            } else {
                 if (f.getPersonaje().equalsIgnoreCase("Hero")) {
                     avatarDialogo = new Image("graphic/dialogo/" + Estado_Juego.hero.getIdHero() + ".png");
                     personaje.drawString(160, 625, Estado_Juego.hero.getHeroName());
@@ -197,22 +200,16 @@ public class Estado_1_PLAY extends BasicGameState {
                 }
                 this.avatarDialogo.draw(POSICIONAVATARX, POSICIONAVATARY, 1);
                 frase.drawString(160, 645, f.getFrase());
-            } else if (Estado_Juego.levelID == 402) {
-                frase.drawString(160, 645, "DERROTA A TODOS LOS ENEMIGOS Y PODRÃ�S LUCHAR CON EL DRAGÃ“N");
+
+                if (input.isKeyPressed(Input.KEY_SPACE)) {
+                    i++;
+                }
             }
 
-            if (input.isKeyPressed(Input.KEY_SPACE)) {
-                i++;
-            }
         } else if (Estado_Juego.dialogo.get((Estado_Juego.levelID * 10) + i) == null && !Estado_Juego.enemys.get(Estado_Juego.levelID).isMuerto()) {
             dialogo = false;
             sbg.enterState(7);
-
         }
-        if (Estado_Juego.huir || Estado_Juego.ganar) {
-            i = 1;
-            Estado_Juego.huir = false;
-            Estado_Juego.ganar = false;
-        }
+        
     }
 }

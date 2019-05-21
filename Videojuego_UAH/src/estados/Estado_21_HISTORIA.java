@@ -41,11 +41,12 @@ public class Estado_21_HISTORIA extends BasicGameState {
     private int msFinal;
 
 	//---------------------------------------------
-	//Métodos
+	//Mï¿½todos
 	//---------------------------------------------
 	
     /**
      * ID de la clase usado para cambiar entre estados
+     * @return 
      */
     @Override
     public int getID() {
@@ -54,27 +55,37 @@ public class Estado_21_HISTORIA extends BasicGameState {
 
     /**
      * Crea los dialogos
+     * @param container
+     * @param game
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         posy = 0;
 
-        introimg = new Image("graphic/historia/"+Estado_Juego.levelID+".png");
         movimiento = true;
         msFinal = 0;
     }
 
     /**
      * Pinta los dialogos
+     * @param container
+     * @param game
+     * @param g
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+        introimg = new Image("graphic/historia/"+Estado_Juego.levelID+".png");
         introimg.draw(0, -posy);
     }
 
     /**
      * Actualiza el Juego y cambia entre dialogos
      * 
+     * @param container
+     * @param game
+     * @param delta
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) {
@@ -101,7 +112,11 @@ public class Estado_21_HISTORIA extends BasicGameState {
         }
 
         if (Keyboard.isKeyDown(Input.KEY_ESCAPE) || msFinal >= 3000) {
-            game.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+            if (Estado_Juego.levelID == 402) {
+                game.enterState(0, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+            } else {
+                game.enterState(1, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+            }
         }
 
     }

@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/modelos/Enemigo.java</file>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/estados/Estado_7_BATALLA.java</file>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/estados/Estado_21_HISTORIA.java</file>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/principal/Analisis_Mapa.java</file>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/estados/Estado_1_PLAY.java</file>
-            <file>file:/C:/Users/jgomezsu/Desktop/Videojuego_UAH/src/utils/BBDD_Enemigos.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

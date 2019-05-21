@@ -17,7 +17,7 @@ import utils.BBDD_Enemigos;
  */
 
 /** 
- * Estado inicial del Juego, ocurre después de la Intro
+ * Estado inicial del Juego, ocurre despuï¿½s de la Intro
  *
  */
 public class Estado_Juego extends Analisis_Mapa {
@@ -40,6 +40,7 @@ public class Estado_Juego extends Analisis_Mapa {
     public static Heroe hero;
     public static boolean huir = false;
     public static boolean ganar = false;
+    public static boolean escena_final = false;
     
     public ArrayList<modelos.Portal> portalMapList;
     public static HashMap<Integer, Enemigo> enemys;
@@ -51,7 +52,7 @@ public class Estado_Juego extends Analisis_Mapa {
 	
     
     /**
-     * Crea el mapa inicial y pone al heroe en su posición inicial
+     * Crea el mapa inicial y pone al heroe en su posiciï¿½n inicial
      * @throws SlickException
      */
     public Estado_Juego() throws SlickException {

@@ -62,15 +62,16 @@ public class Estado_7_BATALLA extends BasicGameState {
 
     private final Color atacar_huir[] = {colorTexto, colorTexto};
     
-    private Font tipo_letra_dialogo = new Font("Arial Black", Font.PLAIN, 15);
+    private final Font tipo_letra_dialogo = new Font("Arial Black", Font.PLAIN, 15);
     private TrueTypeFont personaje1, frase;
     
 	//---------------------------------------------
-	//Métodos
+	//Mï¿½todos
 	//---------------------------------------------
 	
     /**
      * ID de la clase usado para cambiar entre estados
+     * @return 
      */
     @Override
     public int getID() {
@@ -79,6 +80,9 @@ public class Estado_7_BATALLA extends BasicGameState {
 
     /**
      * Crea las imagenes de las peleas
+     * @param container
+     * @param game
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -91,7 +95,7 @@ public class Estado_7_BATALLA extends BasicGameState {
         this.enemigoy = 230;
         comentarios = Estado_Juego.enemys.get(Estado_Juego.levelID).getEnemyName() + ": Demuestrame lo que sabes hacer!!";
         estado = 0;
-        fondo = new Image("graphic/battle/battleground_forest_oficial.png"); //Imagen de fondo
+        
         sonido = new Sound("music/cancion_capitulo_5.ogg");
         info = "Tu Turno";
         personaje1 = new TrueTypeFont(tipo_letra_dialogo, true);
@@ -100,6 +104,10 @@ public class Estado_7_BATALLA extends BasicGameState {
 
     /**
      * Pinta las peleas
+     * @param container
+     * @param game
+     * @param g
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
@@ -107,6 +115,7 @@ public class Estado_7_BATALLA extends BasicGameState {
             sonido.play();
         }
         personaje = Estado_Juego.hero.getImagen(Estado_Juego.hero.getIdHero());
+        fondo = new Image("graphic/battle/"+Estado_Juego.levelID+".png"); //Imagen de fondo
         enemigo = new Image("graphic/dialogo/" + Estado_Juego.levelID + "r.png");
         fondo.draw(0, 0);
         personaje.draw(40, 340);
@@ -119,9 +128,9 @@ public class Estado_7_BATALLA extends BasicGameState {
         frase.drawString(80, 555, "Atacar", atacar_huir[0]);
         frase.drawString(80, 630, "Huir", atacar_huir[1]);
         frase.drawString(310, 535, "Habilidades");
-        frase.drawString(310, 570, "Fuerza:" + (Estado_Juego.hero.getFuerza() * 10));
-        frase.drawString(310, 600, "Resistencia:" + (Estado_Juego.hero.getResistencia() * 10));
-        frase.drawString(310, 630, "Magia:" + (Estado_Juego.hero.getMagia() * 10));
+        frase.drawString(310, 570, "Fuerza: " + (Estado_Juego.hero.getFuerza() * 10));
+        frase.drawString(310, 600, "Resistencia: " + (Estado_Juego.hero.getResistencia() * 10));
+        frase.drawString(310, 630, "Magia: " + (Estado_Juego.hero.getMagia() * 10));
         frase.drawString(365, 670, info, Color.white);
         int i = 0, pos = 625;
         for (Ataque a : Estado_Juego.hero.getAtaques()) {
@@ -139,6 +148,10 @@ public class Estado_7_BATALLA extends BasicGameState {
 
     /**
      * Actualiza las batallas, decide de quien es el turno y te permite atacar
+     * @param container
+     * @param game
+     * @param delta
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
@@ -167,7 +180,7 @@ public class Estado_7_BATALLA extends BasicGameState {
             if (input.isMouseButtonDown(0) && atacar == false) {
                 Estado_Juego.huir = true;
                 game.enterState(1, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
-                //Cambiar posición del heroe
+                //Cambiar posiciï¿½n del heroe
                 Estado_Juego.pos_x_hero-=50;
                 Estado_Juego.pos_y_hero-=50;
                 //Restaura la vida al acabar el combate
@@ -190,10 +203,10 @@ public class Estado_7_BATALLA extends BasicGameState {
                     } else {
                         comentarios += " Lo ha esquivado!!";
                     }
+                    comentarios += " (SPACE para continuar)";
                     turnoHumano = false;
                     turnoMaquina = true;
                     atacar = false;
-                    comprobacion();
                 }
             }
             //Ataque 2
@@ -207,10 +220,10 @@ public class Estado_7_BATALLA extends BasicGameState {
                     } else {
                         comentarios += " Lo ha esquivado!!";
                     }
+                    comentarios += " (SPACE para continuar)";
                     turnoHumano = false;
                     turnoMaquina = true;
                     atacar = false;
-                    comprobacion();
                 }
             }
             //Ataque 3
@@ -224,10 +237,10 @@ public class Estado_7_BATALLA extends BasicGameState {
                     } else {
                         comentarios += " Lo ha esquivado!!";
                     }
+                    comentarios += " (SPACE para continuar)";
                     turnoHumano = false;
                     turnoMaquina = true;
                     atacar = false;
-                    comprobacion();
                 }
             }
         } else if (!atacar || !turnoHumano) {
@@ -241,17 +254,21 @@ public class Estado_7_BATALLA extends BasicGameState {
                 int dmg = Estado_Juego.enemys.get(Estado_Juego.levelID).ataque();
                 Estado_Juego.hero.setTempHeroHealth(Estado_Juego.hero.getTempHeroHealth() - dmg);
                 info = "DaÃ±o: " + dmg;
-                comentarios = Estado_Juego.enemys.get(Estado_Juego.levelID).getEnemyName() + ": ATAQUE";
+                comentarios = Estado_Juego.enemys.get(Estado_Juego.levelID).getEnemyName() + ": ATAQUE (SPACE para continuar)";
                 
                 turnoMaquina = false;
                 turnoHumano = true;
             } else if (turnoHumano && !turnoMaquina) {
                 info = "Tu Turno";
+                comentarios="";
             }
             if(comprobacion()==true){
+                comentarios="";
+                Estado_Juego.ganar=true;
                 game.enterState(21, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
             }else if(comprobacion()==false && partida_perdida()==true){
-                game.enterState(1, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
+                comentarios="";
+                game.enterState(0, new FadeOutTransition(org.newdawn.slick.Color.black), new FadeInTransition(org.newdawn.slick.Color.black));
             }
         }
 
@@ -259,6 +276,9 @@ public class Estado_7_BATALLA extends BasicGameState {
 
     /**
      * Huye del combate
+     * @param container
+     * @param game
+     * @throws org.newdawn.slick.SlickException
      */
     @Override
     public void leave(GameContainer container, StateBasedGame game) throws SlickException {
@@ -267,6 +287,7 @@ public class Estado_7_BATALLA extends BasicGameState {
     
     /**
      * Ganas el combate
+     * @return 
      */
     public boolean partida_ganada(){
         return Estado_Juego.enemys.get(Estado_Juego.levelID).getTempHeroHealth()<=0;
@@ -275,6 +296,7 @@ public class Estado_7_BATALLA extends BasicGameState {
     
     /**
      * Pierdes el combate
+     * @return 
      */
     public boolean partida_perdida(){
         return Estado_Juego.hero.getTempHeroHealth()<=0;
@@ -282,6 +304,7 @@ public class Estado_7_BATALLA extends BasicGameState {
     
     /**
      * Comentarios que salen al acabar el combate
+     * @return 
      */
     public boolean comprobacion(){
         if(partida_ganada()||partida_perdida()){
@@ -290,11 +313,13 @@ public class Estado_7_BATALLA extends BasicGameState {
                 ganado = true;
                 //Restaura la vida al acabar el combate
                 Heroe.restaurarVida();
+                Estado_Juego.enemys.get(Estado_Juego.levelID).setMuerto(true);
                 return true;
             }else if(partida_perdida()){
                 comentarios="Has perdido :(";
                 //Restaura la vida al acabar el combate
                 Heroe.restaurarVida();
+                Estado_Juego.enemys.get(Estado_Juego.levelID).reset();
                 return false;
             }
         }
