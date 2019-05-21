@@ -71,7 +71,7 @@ public class Estado_7_BATALLA extends BasicGameState {
         this.enemigoy = 230;
         comentarios = Estado_Juego.enemys.get(Estado_Juego.levelID).getEnemyName() + ": Demuestrame lo que sabes hacer!!";
         estado = 0;
-        fondo = new Image("graphic/battle/battleground_forest_oficial.png"); //Imagen de fondo
+        
         sonido = new Sound("music/cancion_capitulo_5.ogg");
         info = "Tu Turno";
         personaje1 = new TrueTypeFont(tipo_letra_dialogo, true);
@@ -84,6 +84,7 @@ public class Estado_7_BATALLA extends BasicGameState {
             sonido.play();
         }
         personaje = Estado_Juego.hero.getImagen(Estado_Juego.hero.getIdHero());
+        fondo = new Image("graphic/battle/"+Estado_Juego.levelID+".png"); //Imagen de fondo
         enemigo = new Image("graphic/dialogo/" + Estado_Juego.levelID + "r.png");
         fondo.draw(0, 0);
         personaje.draw(40, 340);
