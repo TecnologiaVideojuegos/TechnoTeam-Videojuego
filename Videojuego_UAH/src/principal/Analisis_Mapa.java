@@ -14,8 +14,20 @@ import modelos.Portal;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Se encarga de las colisiones que ocurren en el Mapa
+ *
+ */
 public class Analisis_Mapa {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     private int collisionID;
     private int collisionTileID;
     private int testField;
@@ -23,10 +35,13 @@ public class Analisis_Mapa {
     public static ArrayList<Rectangle> collisions;
     public static Rectangle recPlayer, recField;
     
-    public static void reset(){
-    
-    }
-
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Actualiza el mapa
+     */
     public void updateEntityFieldList(TiledMap map) {
         exist = new boolean[map.getWidth()][map.getHeight()];
         testField = map.getTileId(0, 0, 1);
@@ -41,6 +56,9 @@ public class Analisis_Mapa {
         updateCollisionFields(map);
     }
 
+    /**
+     * Actualiza las colisiones
+     */
     public void updateCollisionFields(TiledMap map) {
         collisions = new ArrayList<>();
         collisions.clear();
@@ -55,6 +73,10 @@ public class Analisis_Mapa {
         collisions.trimToSize();
     }
 
+    /**
+     * Actualiza los portales
+     * @param portalMapList
+     */
     public void updatePortalMapList(ArrayList<Portal> portalMapList) {
         Portal newPortal;
         String path = "res/portal/" + Estado_Juego.levelID + ".xml";

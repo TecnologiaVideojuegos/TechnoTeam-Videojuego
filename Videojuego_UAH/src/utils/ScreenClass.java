@@ -12,10 +12,28 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+/**
+ * 
+ * @author Techno team
+ *
+ */
 public class ScreenClass {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     public static int nrScreena = 0;
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Pantalla del Juego
+     * @param bWspX
+     * @param bWspY
+     */
     public static void makeScreen(int bWspX, int bWspY) {
         try {
 

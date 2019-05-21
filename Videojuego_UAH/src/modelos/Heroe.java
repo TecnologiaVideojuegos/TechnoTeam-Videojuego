@@ -5,16 +5,24 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import personaje.Ataque;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor del Protagonista
+ *
+ */
 public class Heroe {
     private int idHero;
     private String heroName;
     private ArrayList<Ataque> ataques;
 
-    private int tempHeroHealth;
+    private static int tempHeroHealth;
     private int maxHeroHealth;
 
     private int fuerza;
-    private int resistencia;
+    private static int resistencia;
     private int magia;
     
     private Image imagen;
@@ -46,8 +54,8 @@ public class Heroe {
         this.idHero = idHero;
     }
     
-    public void reset(){
-        this.tempHeroHealth = this.maxHeroHealth;
+    public static void restaurarVida() {
+    	tempHeroHealth=500+resistencia*15;
     }
 
     public void setImagen(Image imagen) {
@@ -127,7 +135,6 @@ public class Heroe {
 
     public void setTempHeroHealth(int tempHeroHealth) {
         this.tempHeroHealth = tempHeroHealth;
-        this.maxHeroHealth = tempHeroHealth;
     }
 
     public int getMaxHeroHealth() {

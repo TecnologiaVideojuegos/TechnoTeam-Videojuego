@@ -6,14 +6,27 @@
 package personaje;
 
 /**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor de los diferentes ataques y habilidades del Protagonista
  *
- * @author Michael Lofer
  */
 public class Ataque {
 
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     private int dmg, usos, probabilidadFallo, usosMax;
     private String nombre, descripcion;
 
+    
+	//---------------------------------------------
+	//Métodos
+	//---------------------------------------------
+	
     public Ataque(int dmg, String nombre, String descripcion, int probabilidadFallo) {
         this.usosMax = usos;
         this.dmg = dmg;

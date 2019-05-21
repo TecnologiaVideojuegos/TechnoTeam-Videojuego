@@ -6,8 +6,11 @@
 package principal;
 
 /**
- *
- * @author Sengo
+ * @author Techno team
+ */
+
+/**
+ * El Juego se inicia aqui
  */
 public class Launcher {
     public static void main(String[] args) {

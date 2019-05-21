@@ -5,7 +5,20 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.state.StateBasedGame;
 import utils.ScreenClass;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Teclas que puedes usar durante el Juego aparte de wasd
+ *
+ */
 public class Teclas {
+	
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
     public static void functionalKeyHandler(GameContainer gc, StateBasedGame sbg, Input input, int xpos, int ypos) {
         
         xpos = input.getMouseX();

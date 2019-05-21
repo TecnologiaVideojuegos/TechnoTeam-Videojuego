@@ -4,8 +4,20 @@ import principal.Estado_Juego;
 import org.newdawn.slick.SlickException;
 import estados.Estado_1_PLAY;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Cambia entre mapas y detecta colisiones con NPC y enemigos
+ *
+ */
 public class Portales {
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
     public void isEnter(Estado_Juego gameStatus, int playerCenterX, int playerCenterY) throws SlickException {
         for (int i = 0; i < gameStatus.portalMapList.size(); i++) {
             

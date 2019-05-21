@@ -2,6 +2,14 @@ package modelos;
 
 import principal.SpriteGeneral;
 
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor de los enemigos del Juego
+ *
+ */
 public class Enemigo {
     private String enemyName;
     private int IdLevel;

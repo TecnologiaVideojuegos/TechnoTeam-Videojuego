@@ -10,12 +10,21 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 /**
- *
- * @author Sengo
- */
+*
+* @author Techno team
+*/
+
+/**
+* Sprites generales
+*
+*/
 public class SpriteGeneral {
 
-
+	
+	//---------------------------------------------
+	//Atributos
+	//---------------------------------------------
+	
     public Image imgSprite;
     public int heroHeight, heroWidth;
 
@@ -24,6 +33,16 @@ public class SpriteGeneral {
     public int[] duration = {durationScalar, durationScalar, durationScalar};
     public Animation avatar, movingUp, movingDown, movingLeft, movingRight;
 
+	//---------------------------------------------
+	//Metodos
+	//---------------------------------------------
+	
+    /**
+     * Sprites de los personajes
+     * @param idLevel
+     * @param pos
+     * @throws SlickException
+     */
     public SpriteGeneral(int idLevel, int pos) throws SlickException {
 
         imgSprite = new Image("graphic/enemySprite/avatars" + idLevel + ".png");

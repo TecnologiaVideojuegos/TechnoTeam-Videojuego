@@ -6,8 +6,12 @@
 package modelos;
 
 /**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor de las frases de los NPC
  *
- * @author Sengo
  */
 public class Frase {
     private int idPersonaje;

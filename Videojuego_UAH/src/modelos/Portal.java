@@ -1,4 +1,14 @@
 package modelos;
+
+/**
+ * @author Techno team
+ */
+
+/** 
+ * Constructor de los Portales que te permiten cambiar
+ * entre mapas
+ *
+ */
 public class Portal {
     
     private int xStart;
